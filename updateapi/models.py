@@ -10,8 +10,8 @@ from django_mysql.models import ListTextField,ListCharField
 class User_Personal(models.Model):
     username = models.OneToOneField(to=CustomUser,on_delete=models.CASCADE)
     GENDER_CHOICES=[
-        ('Large','Large'),
-        ('FeLarge','FeLarge'),
+        ('Male','Male'),
+        ('Female','Female'),
         ('Other','Other')
     ]
     firstname=models.CharField(max_length=50)
@@ -20,7 +20,7 @@ class User_Personal(models.Model):
     dob = models.DateField(auto_now_add=True,blank=True, null=True)
     nationality=models.CharField(max_length=50,null=True)
     phone=PhoneNumberField(null=True)
-    img=models.ImageField(upload_to = 'uploads/',)
+    img=models.ImageField(upload_to = 'uploads/')
     pin = models.IntegerField(blank=True, null=True)
     location = models.CharField(max_length=50,null=True) 
    

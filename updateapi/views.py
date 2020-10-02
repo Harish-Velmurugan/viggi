@@ -66,6 +66,8 @@ def userPersonalCreateView(request):
 
     serializer = user_personal_serializer(data=request.data)
     print(request.data)
+    print("-")
+    print(serializer.is_valid())
     if serializer.is_valid():
 
         print("heck")

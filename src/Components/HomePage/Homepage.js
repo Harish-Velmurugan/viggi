@@ -105,10 +105,7 @@ export default class Home extends Component {
                   className="collapse navbar-collapse"
                   id="navbarTogglerDemo01"
                 >
-                  <ul
-                    className="navbar-nav ml-5 pl-5"
-                    style={{ color: "white" }}
-                  >
+                  <ul className="navbar-nav" style={{ color: "white" }}>
                     <li className="nav-item ">
                       <Link className="nav-link">
                         Home<span className="sr-only">(current)</span>
@@ -142,26 +139,27 @@ export default class Home extends Component {
                         aria-haspopup="true"
                         aria-expanded="false"
                       >
-                        Join as
+                        Join as Company
                       </a>
                     </li>
                     <li className="nav-item " style={{ marginRight: "0px" }}>
                       <a
                         onClick={() => this.toggleModel("signin")}
                         className="nav-link ml-5"
+                        aria-haspopup="true"
+                        aria-expanded="false"
                         style={{ marginRight: "0px" }}
                       >
-                        Login |
+                        Login &nbsp;&nbsp;&nbsp;|
                       </a>
                     </li>
-                    <li className="nav-item " style={{ marginLeft: "0px" }}>
+                    <li className="nav-item ">
                       <a
                         class="nav-link"
                         href="#"
                         onClick={() => this.toggleModel("signup")}
                         aria-haspopup="true"
                         aria-expanded="false"
-                        style={{ marginLeft: "0px" }}
                       >
                         Register
                       </a>
@@ -224,11 +222,12 @@ export default class Home extends Component {
             </p>
             <br />
             <p style={{ textAlign: "center" }}>
-              <Link to="/signin">
+              <Link to="">
                 <button
                   type="submit"
                   class="btn btn-warning"
                   style={{ padding: "5px 55px" }}
+                  onClick={() => this.toggleModel("signup")}
                 >
                   <b>Join Now</b>
                 </button>
@@ -312,14 +311,14 @@ export default class Home extends Component {
                           <img
                             src={this.state.challenges[0].img}
                             class="rounded float-left p-3"
-                            width="100%"
-                            height="95%"
+                            width="50"
+                            height="50"
                             alt=""
                           />
                         </div>
                         <div class="p-3" style={{ width: "50%" }}>
                           <h3>{this.state.challenges[0].title}</h3>
-                          <p>{this.state.challenges[0].description}</p>
+                          {/* <p>{this.state.challenges[0].description}</p> */}
                           <p>
                             <b>DeadLine</b> :{" "}
                             {this.state.challenges[0].deadline.split("", 10)}

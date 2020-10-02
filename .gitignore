@@ -1,21 +1,21 @@
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 
 # dependencies
-#/api/migrations
-#/chat/migrations
-#/comments/migrations
-#/communitychannel/migrations
-#/forum/migrations
-#/helper/migrations
-#/lor/migrations
-#/monitorsolution/migrations
-#/post/migrations
-#/prototypetest/migrations
-#/smartcontract/migrations
-#/solutions/migrations
-#/updateapi/migrations
-#/users/migrations
-#/wiki/migrations
+/api/migrations
+/chat/migrations
+/comments/migrations
+/communitychannel/migrations
+/forum/migrations
+/helper/migrations
+/lor/migrations
+/monitorsolution/migrations
+/post/migrations
+/prototypetest/migrations
+/smartcontract/migrations
+/solutions/migrations
+/updateapi/migrations
+/users/migrations
+/wiki/migrations
 
 
 /node_modules
