@@ -1,0 +1,151 @@
+.profileMain{
+    background: -webkit-linear-gradient(left, #3931af, #00c6ff);
+    margin-top: 2%;
+    padding-bottom: 1%;
+    padding-top: .1%;
+}
+.profileMain .emp-profile{
+    padding: 3%;
+    margin-top: 7%;
+    margin-bottom: 4%;
+    border-radius: 0.5rem;
+    background: #fff;
+}
+.profileMain .profile-img{
+    text-align: center;
+}
+.profileMain .profile-img img{
+    width: 70%;
+    height: 100%;
+}
+.profileMain .profile-img .file {
+    position: relative;
+    overflow: hidden;
+    margin-top: -20%;
+    width: 70%;
+    border: none;
+    border-radius: 0;
+    font-size: 15px;
+    background: #212529b8;
+}
+.profileMain .profile-img .file input {
+    position: absolute;
+    opacity: 0;
+    right: 0;
+    top: 0;
+}
+.profileMain .profile-head h5{
+    color: #333;
+}
+.profileMain .profile-head h6{
+    color: #0062cc;
+}
+.profileMain .profile-edit-btn{
+    border: none;
+    border-radius: 1.5rem;
+    width: 70%;
+    padding: 2%;
+    font-weight: 600;
+    color: #6c757d;
+    cursor: pointer;
+}
+.profileMain .proile-rating{
+    font-size: 12px;
+    color: #818182;
+    margin-top: 5%;
+}
+.profileMain .proile-rating span{
+    color: #495057;
+    font-size: 15px;
+    font-weight: 600;
+}
+.profileMain .profile-head .nav-tabs{
+    margin-bottom:5%;
+}
+.profileMain .profile-head .nav-tabs .nav-link{
+    font-weight:600;
+    border: none;
+}
+.profileMain .profile-head .nav-tabs .nav-link.active{
+    border: none;
+    border-bottom:2px solid #0062cc;
+}
+.profileMain .profile-work{
+    padding: 14%;
+    margin-top: -15%;
+}
+.profileMain .profile-work p{
+    font-size: 12px;
+    color: #818182;
+    font-weight: 600;
+    margin-top: 10%;
+}
+.profileMain .profile-work a{
+    text-decoration: none;
+    color: #495057;
+    font-weight: 600;
+    font-size: 14px;
+}
+.profileMain .profile-work ul{
+    list-style: none;
+}
+.profileMain .profile-tab label{
+    font-weight: 600;
+}
+.profileMain .profile-tab p{
+    font-weight: 600;
+    color: #0062cc;
+}
+
+
+.bronze, .silver, .gold, .platinum, .diamond, .jadiete{
+    position:absolute;
+	margin-top:-3.5px;
+	z-index:1;
+	height:20px;
+	width:20px;
+	border-radius:100px;
+	
+}
+
+.bronze{
+    left:0%;
+}
+.silver{
+	left:2.5%;
+}
+.gold{
+	left:10%;
+}
+.platinum{
+	left:25%;
+}
+.diamond{
+	left:50%;
+}
+.jadiete{
+	left:97%;
+}
+
+.primary-color{
+	background-color:#5f8cb1;
+}
+.success-color{
+	background-color:#5cb85c;
+}
+.danger-color{
+	background-color:#d9534f;
+}
+.warning-color{
+	background-color:#f0ad4e;
+}
+.info-color{
+	background-color:#6269adc0;
+}
+.no-color{
+	background-color:#07dfdf;
+}
+
+
+
+

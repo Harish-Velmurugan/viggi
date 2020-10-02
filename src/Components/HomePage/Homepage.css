@@ -1,0 +1,194 @@
+.navbar-expand-lg {
+  position: fixed;
+  width: 100%;
+}
+
+.navbar-brand {
+  font-weight: bold;
+  font-family: monospace;
+  font-size: 28px;
+}
+
+.navbar-nav > .nav-link > a {
+  color: red;
+}
+
+.navbar-dark .navbar-nav .nav-link {
+  font-weight: 700;
+  font-size: 14px;
+  text-transform: uppercase;
+}
+
+.navbar-dark .navbar-nav .nav-item {
+  margin: 0 15px;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+.homepageheader {
+  height: 100vh;
+  background-image: url("./tree.jpg");
+}
+.homepagecontent {
+  color: black;
+  padding-top: 85vh;
+  padding-left: 10vw;
+  text-align: left;
+  font-size: x-large;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+}
+.homepagenavigation {
+  background-color: white;
+  color: black;
+  padding: 0.5rem 0;
+  position: fixed;
+  top: 0%;
+  box-shadow: 0px 0px 4px black;
+}
+.homepagenavcontent {
+  color: black;
+  display: flex;
+  justify-content: space-between;
+  padding: 0.5rem;
+  align-items: center;
+}
+
+.homepagelogo {
+  display: flex;
+}
+.homepagelist {
+  display: flex;
+  align-items: center;
+  margin-left: 2rem;
+}
+
+.homepagelist1 {
+  justify-content: right;
+}
+.homepagelist-items {
+  list-style: none;
+  margin-left: 4rem;
+}
+.homepagelist-items a {
+  text-decoration: none;
+  color: black;
+}
+.homepageabout1 {
+  padding: 3rem 4rem;
+  background-image: url("./Brain2.jpeg");
+  background-size: 20rem 20rem;
+  background-repeat: no-repeat;
+  background-position-x: 80rem;
+  background-position-y: 5rem;
+}
+
+.homepageabout2 {
+  padding: 3rem 4rem;
+  background-image: url("./clients.png");
+  background-repeat: no-repeat;
+  background-size: auto auto;
+}
+
+.homepageabout3 {
+  /* padding: 3rem 4rem; */
+  background-image: url("./c5.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.homepageabout4 {
+  background-image: url("./o3.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.homepageabout5 {
+  padding: 3rem 4rem;
+  background-image: url("./about.jpg");
+}
+
+.homepageabout {
+  padding: 4rem 4rem;
+}
+
+.homepageabout-content {
+  border-radius: 5px;
+  box-shadow: 3px 3px 6px #555;
+  width: 50%;
+  margin: 0 auto;
+  padding: 1rem 2rem;
+}
+
+.homepagetext {
+  color: black;
+  line-height: 1.5;
+  font-size: x-large;
+}
+.homepageabcontent {
+  width: 70%;
+}
+
+.challenges {
+  padding-top: 15rem;
+  height: 100vh;
+}
+
+.opportunities {
+  padding-top: 15rem;
+  height: 100vh;
+}
+.contactus {
+  width: 70%;
+  color: white;
+  margin: auto;
+  text-align: center;
+}
+
+.abc {
+  background-color: red;
+  width: 100%;
+}
+
+@media (max-width: 800px) {
+  .homepagetext {
+    font-size: large;
+    padding: 1rem;
+  }
+  .homepagecontent {
+    padding-top: 25.5rem;
+    padding-left: 1rem;
+    font-size: large;
+  }
+  .homepageabout {
+    padding: 1.5rem 2rem 1.5rem 2rem;
+    font-size: x-small;
+  }
+  .homepageabout1 {
+    padding: 1.5rem 2rem 1.5rem 2rem;
+    font-size: x-small;
+  }
+  .homepageabout5 {
+    padding: 1.5rem 2rem 1.5rem 2rem;
+    font-size: x-small;
+  }
+  .homepageabcontent {
+    width: 100%;
+  }
+  .challenges {
+    padding-top: 5rem;
+    height: 90vh;
+  }
+  .opportunities {
+    padding-top: 0rem;
+    padding: 0rem 2rem;
+    height: 60vh;
+    font-size: smaller;
+  }
+  .contactus {
+    width: 100%;
+  }
+}

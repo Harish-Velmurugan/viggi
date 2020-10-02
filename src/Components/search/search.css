@@ -1,0 +1,212 @@
+ul.timeline {
+    list-style-type: none;
+    position: relative;
+}
+ul.timeline:before {
+    content: ' ';
+    background:#d4d9df;
+    display: inline-block;
+    position: absolute;
+    left: 29px;
+    width: 2px;
+    height: 100%;
+    z-index: 400;
+}
+ul.timeline > li {
+    margin: 20px 0;
+    padding-left: 20px;
+}
+ul.timeline > li:before {
+    content: ' ';
+    background: white;
+    display: inline-block;
+    position: absolute;
+    border-radius: 50%;
+    border: 3px solid #22c0e8;
+    left: 20px;
+    width: 20px;
+    height: 20px;
+    z-index: 400;
+}
+
+
+
+ @import url('https://fonts.googleapis.com/css?family=Abel');
+
+/* html, body {
+  background: #fff;
+  font-family: Abel, Arial, Verdana, sans-serif;
+} */
+
+.searchcard.center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+}
+
+.searchcard {
+  width: 440px;
+  height: 200px;
+  background-color: #fff;
+  background: linear-gradient(#f8f8f8, #fff);
+  box-shadow: 0 8px 16px -8px rgba(0,0,0,0.4);
+  border-radius: 6px;
+  overflow: hidden;
+  position: relative;
+  margin: 1.5rem;
+}
+
+.searchcard h1 {
+  text-align: center;
+}
+
+.searchcard .additional {
+  position: absolute;
+  width: 150px;
+  height: 100%;
+  background: linear-gradient(#dE685E, #EE786E);
+  transition: width 0.4s;
+  overflow: hidden;
+  z-index: 2;
+}
+
+.searchcard.green .additional {
+  background: linear-gradient(#92bCa6, #A2CCB6);
+}
+
+
+.searchcard:hover .additional {
+  width: 100%;
+  border-radius: 0 5px 5px 0;
+}
+
+.searchcard .additional .user-card {
+  width: 150px;
+  height: 100%;
+  position: relative;
+  float: left;
+}
+
+.searchcard .additional .user-card::after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 10%;
+  right: -2px;
+  height: 80%;
+  border-left: 2px solid rgba(0,0,0,0.025);
+}
+
+.searchcard .additional .user-card .level,
+.searchcard .additional .user-card .points {
+  top: 15%;
+  color: #fff;
+  text-transform: uppercase;
+  font-size: 0.75em;
+  font-weight: bold;
+  background: rgba(0,0,0,0.15);
+  padding: 0.125rem 0.75rem;
+  border-radius: 100px;
+  white-space: nowrap;
+}
+
+.searchcard .additional .user-card .points {
+  top: 85%;
+}
+
+.searchcard .additional .user-card svg {
+  top: 50%;
+}
+
+ .searchcard.additional .more-info {
+  width: 300px;
+  float: left;
+  position: absolute;
+  left: 150px;
+  height: 100%;
+}
+
+.searchcard .additional .more-info h1 {
+  font-size: 1em;
+  color: #fff;
+  margin-bottom: 0;
+}
+
+.searchcard.green .additional .more-info h1 {
+  color: #224C36;
+}
+
+.searchcard .additional .coords {
+  margin: 0 1rem;
+  color: #fff;
+  font-size: 0.75rem;
+}
+
+.searchcard.green .additional .coords {
+  color: #325C46;
+}
+
+.searchcard .additional .coords span + span {
+  float: right;
+}
+
+.searchcard .additional .stats {
+  font-size: 2rem;
+  display: flex;
+  position: absolute;
+  bottom: 1rem;
+  left: 1rem;
+  right: 1rem;
+  top: auto;
+  color: #fff;
+}
+
+.searchcard.green .additional .stats {
+  color: #325C46;
+}
+
+.searchcard .additional .stats > div {
+  flex: 1;
+  text-align: center;
+}
+
+.searchcard .additional .stats i {
+  display: block;
+}
+
+.searchcard .additional .stats div.title {
+  font-size: 0.75rem;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.searchcard .additional .stats div.value {
+  font-size: 1.5rem;
+  font-weight: bold;
+  line-height: 1.5rem;
+}
+
+.searchcard .additional .stats div.value.infinity {
+  font-size: 2.5rem;
+}
+
+.searchcard .general {
+  width: 300px;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 1;
+  box-sizing: border-box;
+  padding: 1rem;
+  padding-top: 0;
+}
+
+.searchcard .general .more {
+  position: absolute;
+  bottom: 1rem;
+  right: 1rem;
+  font-size: 0.9em;
+}
+

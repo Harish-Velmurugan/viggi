@@ -1,0 +1,35 @@
+[
+    {
+      "id": 1,
+      "name": "ASHWIN",
+      "image": "https://jobfindjobs.com/wp-content/uploads/2016/01/Computer-systems-analyst_opt.jpg",      
+      "desc": "Computer Analyst",
+      "star":"5",
+      "points":"Points:2100"
+    },
+    {
+      "id": 2,
+      "name": "ROHIT",
+      "image": "https://skywell.software/wp-content/uploads/2018/09/FB72FF5C-DB9B-4B3B-936D-D1179CF38B2D-1024x683.jpeg",
+      "desc":"Software Engineer",
+      "star":"5",
+      "points":"Points:2100"
+    },
+    {
+      "id": 3,
+      "name": "SARA",
+      "image": "https://cdn.pixabay.com/photo/2017/01/29/21/16/nurse-2019420__340.jpg",
+      "desc": "Doctor",
+      "star":"4",
+      "points":"Points:2050"
+
+    },
+    {
+      "id": 4,
+      "name": "MANOJ",
+      "image": "https://info.prometheusresearch.com/hs-fs/hubfs/GettyImages-1151967132.jpg?width=563&name=GettyImages-1151967132.jpg",
+      "desc": "Software Analyst",
+      "star":"3",
+      "points":"Points:2000"
+    }
+  ]

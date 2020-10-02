@@ -1,0 +1,136 @@
+.titlebar-wallet{
+    display: flex;
+    justify-content: flex-end;
+    height:60px;
+}
+
+* {
+    margin:0;
+    padding: 0;
+
+}
+
+
+.button-dash{
+    background-color: #323754;
+    border: none;
+    padding: 15px;
+    color: rgb(182, 183, 184);
+    font-weight: 600;
+    font-size: 16px;
+    height: 60px;
+    margin-right: 1px;
+}
+.button-dash:hover{
+    color:white;
+}
+
+.card-wallet h2{
+    margin-top: 1%;
+    margin-bottom: -20px;
+}
+.card-wallet{
+    width:70%;
+    padding: 30px;
+    max-width: 400px;
+    min-width: 390px;
+    margin-top: 1%;
+    margin-left: 3%;
+    border-radius: 20px;
+    background: #323754;
+    color: white;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+
+
+.card-wallet h2{
+  font-size: 30px;
+}
+.card-transaction h3{
+    font-size: 25px;
+}
+
+
+.card-transaction{
+    padding: 15px;
+    margin-right: 4%;
+    margin-left: 6%;
+    border-radius: 20px;
+    width: 85%;
+    min-width: 390px;
+    text-align: center;
+    margin-bottom: 10%;
+    background:#323754;
+    color: white;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.card-transaction h3{
+    font-size:20px;
+
+}
+
+.heading-wallet{
+    display: inline-flex;
+    float: left;
+    color:white;
+    
+   
+}
+
+
+.row-wallet:after {
+    content: "";
+    display: table;
+    clear: both;
+
+  }
+
+.column-wallet {
+    margin-top: 1% ;
+    float: left;
+    width: 25%;
+    min-width: 180px;
+    padding: 1%;
+    
+}
+  
+
+.card-hello{
+    margin-top: -70px;
+    color: rgb(0, 0, 0);
+    align-items: center;
+}
+
+
+.button-dashb{
+    background-color: #323754;
+    border: none;
+    padding: 15px;
+    color: rgb(182, 183, 184);
+    font-weight: 600;
+    font-size: 18px;
+    height: 60px;
+    margin-top: -14px;
+    margin-right: 1px;
+    text-align: center;
+    text-decoration: none;
+}
+.button-dashb:hover{
+    color:white;
+}
+
+.column-wallet .td {
+    display:inline-flex;
+    float: inline-end;
+    word-wrap:"break-word";
+}
+
+.dashboard-wallet{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 3%;
+
+}

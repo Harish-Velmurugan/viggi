@@ -1,0 +1,115 @@
+
+  
+ 
+  .float{
+    padding-top: 1rem; 
+	position:fixed;
+	width:100px;
+	height:50px;
+	bottom:200px;
+	right:40px;
+	background-color:#00ab66;
+	color:#FFF;
+	border-radius:100px;
+	font-size:13pt;
+	text-align:center;
+	box-shadow: 2px 2px 3px #999;
+}
+
+
+.my-float{
+	margin-top:22px;
+}
+
+  
+ 
+.float1{
+    padding-top: 1rem; 
+	position:fixed;
+	width:100px;
+	height:50px;
+	bottom:280px;
+	right:40px;
+	background-color:#00aaee;
+	color:#FFF;
+	border-radius:100px;
+	
+	font-size:13pt;
+	text-align:center;
+	box-shadow: 2px 2px 3px #999;
+}
+
+
+.my-float1{
+	margin-top:19px;
+}
+
+.box1:hover
+{
+    transform:scale(1.1);
+}
+
+.float3{
+    padding-top: 13px; 
+	position:fixed;
+	width:100px;
+	height:50px;
+	bottom:500px;
+	right:40px;
+	color:#FFF;
+	border-radius:100px;
+	
+	font-size:13pt;
+	text-align:center;
+	box-shadow: 2px 2px 3px #999;
+}
+
+
+.my-float3{
+	margin-top:19px;
+}
+
+
+.float4{
+    padding-top: 13px; 
+	position:fixed;
+	width:100px;
+	height:50px;
+	bottom:440px;
+	right:40px;
+	color:#FFF;
+	border-radius:100px;
+	
+	font-size:13pt;
+	text-align:center;
+	box-shadow: 2px 2px 3px #999;
+}
+
+
+.my-float4{
+	margin-top:19px;
+}
+
+ 
+.float5{
+	padding-top: 1rem; 
+	position:fixed;
+	width:100px;
+	height:50px;
+	bottom:380px;
+	right:40px;
+	background-color:#00aaee;
+	color:#FFF;
+	border-radius:100px;
+	
+	font-size:13pt;
+	text-align:center;
+	/* box-shadow: 2px 2px 3px #999; */
+}
+
+
+.my-float5{
+	margin-top:19px;
+}
+
+  

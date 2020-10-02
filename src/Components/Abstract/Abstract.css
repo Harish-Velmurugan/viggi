@@ -1,0 +1,87 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap");
+.navColor {
+  background-color: #323754;
+}
+.badgePos {
+  float: right;
+}
+.innerDiv1 {
+  max-height: 200px;
+  overflow: hidden;
+  width: 60%;
+  height: 80%;
+  float: right;
+  margin: 0 auto;
+  margin-left: 1%;
+  margin-right: 3%;
+  position: relative;
+  overflowwrap: "break-word";
+}
+.innerDiv2 {
+  max-height: 130px;
+  width: 60%;
+  overflowwrap: "break-word";
+  float: left;
+  margin: 0 auto;
+  margin-left: 20px;
+  position: relative;
+  overflow: hidden;
+}
+
+.divSpace {
+  background-color: #323754;
+  color: white;
+  border-radius: 15px;
+  padding: 1%;
+  margin-top: 120px;
+  margin-left: 0%;
+  width: 50%;
+  height: 30%;
+  overflow: hidden;
+  display: inline-block;
+  position: relative;
+  min-width: 260px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  
+}
+
+.Answers1 {
+  background-color: white;
+  border-radius: 15px;
+  padding: 10px;
+  margin-top: 50px;
+  margin-left: 7%;
+  width: 40%;
+  height: 20%;
+  float: left;
+  min-width: 300px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  
+}
+
+.question {
+  border-radius: 50%;
+  margin-top: 20px;
+  margin-left: 23%;
+}
+
+.diagonal {
+  background-color: hotpink;
+  white-space: nowrap;
+  position: absolute;
+  padding: 0.5% 5%;
+  min-width: 10%;
+  transform: rotate(-45deg) translate(-40%, 0);
+  color: white;
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 2vh;
+  top: -13px;
+  box-sizing: border-box;
+}
+
+.profile {
+  border-radius: 50%;
+  float: left;
+  margin-left: 3%;
+}

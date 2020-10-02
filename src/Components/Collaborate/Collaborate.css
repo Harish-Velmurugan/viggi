@@ -1,0 +1,75 @@
+.outerDiv{
+  
+  background-color: #323754;
+  border-radius: 15px;
+  padding: 1.3%;
+  width: 96%;
+  margin-top: 80px;
+  margin-left: 2%;
+  margin-right: 2%;
+  margin-bottom: 10px;
+  overflow: hidden; 
+  display:inline-block;
+  position: relative;
+}
+ .inner0{
+      
+    background-color: white;
+    border-radius: 15px;
+    padding: 0.8%;
+    margin-top: 2%;
+    margin-left: 1.8%;
+    margin-bottom: 1.8%;
+    margin-right: 1.8%;
+    width: 29%;  
+    min-width: 318px;
+    float: left;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  }
+  
+  .inner3{
+    width: 60%;
+    height: 70%;
+    float: right;
+    margin: 0 auto;
+    margin-left: -5%;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .diagonal1{
+   
+    background-color:hotpink;
+		white-space:nowrap;
+		position: absolute;
+		padding: 5px 50px;
+		min-width: 50px;
+		transform: rotate(-45deg) translate(-42%, 0);
+		color: white;
+		text-align: center;
+		text-transform: uppercase;
+		font-size: 1.5vw;
+		top: -20px;
+		box-sizing: border-box;
+		}
+    .dropdown-content a {
+      color: black;
+      text-decoration: none;
+      display: block;
+    }
+    
+    .dropdown a:hover {background-color: rgb(96, 96, 129);
+      display: block;
+    }
+    
+    .show {display: block;}
+
+    .contract-watermark{
+      position: absolute;
+      opacity: 0.18;
+      color: gray;
+      font-size: 20vw;
+      margin-top:49%;
+      margin-left:20%;
+      transform: rotate(-45deg) translate(-37%, 0)
+    }

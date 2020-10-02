@@ -1,0 +1,181 @@
+$blue: #323754;
+$white : #fff;
+$grey : #eee;
+
+
+.chat{
+    
+    height : 104vh;
+    
+    .container{
+        background-color: white;
+        padding : 0px 30px;
+        margin-left: 2%;
+        width: 80%;
+        height :70%;
+        &.message-form{
+            height : 10%;
+            width:170%;
+
+            
+        }
+    }
+    
+    h1, h3{
+        margin-top:0;
+        color : $blue;
+    }
+    
+    input{
+        color :black;
+        font-size : 1em;
+        font-weight : 300;
+        line-height : 25px;
+        padding : 5px;
+        box-sizing : border-box;
+        display : inline-block;
+        width : 90%;
+        margin-left: -1%;
+        margin-top: 2%;
+        // float : left;
+    }
+    input:focus,button:focus
+    {
+        outline: 0;
+    }
+    button{
+        // background-image: "linear-gradient(to bottom, #335993, #304b77, #2c3e5b, #283141, #222428)";
+
+        background-image: linear-gradient(to bottom, #354e7e, #334d7f, #304c7f, #2e4a80, #2b4980, #264581, #214282, #1d3e83, #173783, #142f83, #142782, #181d80);
+        border-color : $blue;
+        border-style : solid;
+        color : white;
+        font-size : 1.4em;
+        width : 10%;
+        height: 10%;
+        // margin-left: 10px;
+        //  float : right;
+    }
+
+    ul {
+        list-style : none;
+        overflow-y : scroll;
+        margin : 0;
+        padding : 0;
+        height : 85%;
+        
+    }
+
+    ul li{
+        clear : both;
+        display : block;
+        margin-bottom : 5px;
+        max-width: 47%;
+        min-width : 8%;
+
+        p {
+            border-radius : 20px;
+            
+            padding : 5px 20px;
+            margin : 0;
+        }
+
+        .author {
+            color : grey;
+            display : inline-block;
+            text-align : center;
+            padding : 5px;
+            margin : 0 2%;
+            font-weight: 300;
+            font-size : 12px;
+        }
+    }
+
+    .her {
+        float : left;
+        text-align : left;
+
+        
+        
+
+        p{
+            background :white;
+
+            
+            
+        }
+    }
+    
+    .me {
+        float : right;
+        text-align : right;
+        margin-top: 6px;
+        margin-right: 6px;
+
+        .author{
+            display : none;
+        }
+        .profilepic
+        {
+            display: none;
+        }
+
+        p{
+            background-image: linear-gradient(to right top, #6d95da, #5595d3, #3d95ca, #2793bf, #1591b3);
+            //   #78e08f #323754 #0EBFE9 #42647F
+            // new #2F4F4F #00868B	 #05B8CC
+            //#4169E1
+            color : $white;
+        }
+    }
+    
+    .her + .me {
+        p{
+            border-bottom-right-radius: 5px;
+        }
+    }
+
+    .me + .me {
+        p{
+            border-top-right-radius: 5px;
+            border-bottom-right-radius: 5px;
+        }
+    }
+
+    .me:last-of-type{
+        p {
+            border-bottom-right-radius: 3px;
+        }
+    }
+}
+
+//scrollbar css starts
+.custom-scrollbar-js,
+.custom-scrollbar-css {
+  height: 200px;
+}
+
+
+/* Custom Scrollbar using CSS */
+.custom-scrollbar-css {
+  overflow-y: scroll;
+}
+
+/* scrollbar width */
+.custom-scrollbar-css::-webkit-scrollbar {
+  width: 7px;
+}
+
+/* scrollbar track */
+.custom-scrollbar-css::-webkit-scrollbar-track {
+  background: #eee;
+}
+
+/* scrollbar handle */
+.custom-scrollbar-css::-webkit-scrollbar-thumb {
+  border-radius: 1rem;
+  background-color: #00d2ff;
+  background-image: linear-gradient(to top, #00d2ff 0%, #3a7bd5 100%);
+}
+
+//scrollbar ends

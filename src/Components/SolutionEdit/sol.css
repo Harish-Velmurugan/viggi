@@ -1,0 +1,11 @@
+#rcorners2 {
+    border-radius: 25px;
+    background: #01075c;
+    background-position: left top;
+    background-repeat: repeat;
+    padding: 10px; 
+    min-width: '20px';
+    display: inline-block;
+    height: 5px;  
+    color:#ffffff;
+  }

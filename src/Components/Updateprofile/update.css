@@ -1,0 +1,93 @@
+#imageUpload {
+  display: none;
+}
+
+#profileImage {
+  cursor: pointer;
+}
+#profile-container {
+  margin-left: "50%";
+  width: 50%;
+}
+#profile-container img {
+  width: 150px;
+  height: 150px;
+}
+
+.container {
+  position: relative;
+}
+
+.img {
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 5px;
+  width: 150px;
+}
+
+.overlay {
+  position: absolute;
+  bottom: 7pt;
+  left: 11pt;
+  right: 0;
+  background-color: #323754;
+  overflow: hidden;
+  width: 0%;
+  height: 96%;
+  transition: 0.3s ease;
+}
+
+.container1:hover .overlay {
+  width: 40%;
+}
+
+.text {
+  white-space: nowrap;
+  color: white;
+  font-size: 20px;
+  position: absolute;
+  overflow: hidden;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+}
+
+.container1 {
+  position: relative;
+}
+
+.image {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: #323754;
+  overflow: hidden;
+  width: 100%;
+  height: 0;
+  transition: 0.5s ease;
+}
+
+.container1:hover .overlay {
+  height: 40%;
+}
+
+.text {
+  white-space: nowrap;
+  color: white;
+  font-size: 20px;
+  position: absolute;
+  align-items: center;
+  overflow: hidden;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+}

@@ -1,0 +1,11 @@
+.main_content {
+  margin-top: 80px;
+  margin-left: 270px;
+}
+
+@media (max-width: 800px) {
+  .main_content {
+    margin: 10px;
+    margin-top: 80px;
+  }
+}

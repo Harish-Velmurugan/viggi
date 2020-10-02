@@ -1,0 +1,108 @@
+ .wallet{
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    padding : 20px;
+    border-radius: 50px;
+    box-sizing: border-box;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    width:400px;
+    height: 400px;
+}
+
+.button-w{
+    margin-right: 10px;
+    margin-left: 17%;
+    margin-bottom: 5%;
+    background-color: #323754; /* blue */
+    outline: none;
+    border: none;
+    color: white;
+    padding: 15px;
+    color: white;
+    font-weight: bolder;
+    font-size: 16px;
+    border-radius: 10px;
+    margin-top: 10%;
+    width: 25.5%;
+}
+.button-w:hover{
+    outline: none;
+    border: none;
+    background-color: #03071b;
+    color:white;
+}
+
+
+.username-wallet{
+    border: none;
+    margin-top: 5%;
+    margin-left: 10%;
+    width: 80%;
+    height: 50px;
+    padding: 15px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.Title-wallet{
+    margin-top: 2%;
+    margin-bottom: 7%;
+}
+
+.border-wallet{
+    margin-top:10%;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.payment-post{
+    width: 80%;
+    border-radius: 15px;
+    height: 100px;
+    margin-top: -10%;
+    margin-bottom: 2%;
+    padding: 10px;
+    max-width: 550px;
+    height: 120px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
+}
+
+
+.button-p{
+    margin-right: 10px;
+    margin-left: 10px;
+    background-color: #5ebe61; /* Green */
+    border: none;
+    color: white;
+    padding: 15px;
+    color: black;
+    font-weight: bold;
+    font-size: 16px;
+    border-radius: 10px;
+    width: 200px;
+}
+.button-p:hover{
+    background-color: green;
+    color:white;
+}
+
+
+.red-alert-w{
+    margin-top: 1%;
+    color: red;
+    display: flex;
+    justify-content: center;
+}
+
+.red-alerts{
+    color: red;
+    margin-left: 5%;
+    margin-top: -15%;
+    margin-bottom: 15%;
+}

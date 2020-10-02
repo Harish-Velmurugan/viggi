@@ -1,0 +1,92 @@
+.withdraw-wallet{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 7%;
+    
+}
+
+.withdraw-input{
+    margin-bottom: 2%;
+    margin-top: 3%;
+    border: none;
+    outline: none;
+    height: 50px;
+    padding: 15px ;
+    width: 80%;
+    max-width: 300px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.withdraw-button{
+    margin-right: 10px !important;
+    margin-left: 10px !important;
+    background-color: #4885ed!important; 
+    border: none !important;
+    color: white !important;
+    padding: 15px !important;
+    font-weight: bolder !important;
+    font-size: 16px !important;
+    border-radius: 10px !important;
+    margin-top: 3% !important;
+    width: 110px !important;
+}
+.withdraw-button:hover{
+    background-color:#0150d8 !important;
+    color:white !important;
+}
+
+.withdraw-card{
+    align-items: center;
+    padding : 15px;
+    width: 500px;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    margin-top: -200px;
+    margin-left: -250px;
+    border-radius: 20px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    background-color: #323754;
+}
+
+.titlebar-wallet{
+    display: flex;
+    justify-content: flex-end;
+    height:60px;
+    background: #323754;
+}
+
+.red-alert{
+    margin-top: 8%;
+    color: red;
+    display: flex;
+    justify-content: center;
+}
+
+
+.arrange-details-ppp{
+    margin-left: 10%;
+    align-items: center;
+    font-size:16px;
+    font-weight: bold;
+    line-height: 1.7;
+    background-image: url("./navVignatree.png");
+    background-position-y: 105% ;
+    background-position-x: 2% ;
+    background-repeat: no-repeat; 
+    background-size: 450px 200px;
+}
+
+.arrange-details-ppp h3{
+    font-size: 20px;
+}
+
+.arrange-details-ppp img {
+    width: 15%;
+    max-width: 150px;
+    margin-left: 37%;
+
+}
+

@@ -1,0 +1,120 @@
+
+.bidvalue-wallet{
+    border: none;
+    width: 300px;
+    padding: 10px;
+    font-weight: 700;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    outline: none;
+}
+
+.bidder-wallet{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin-top: 5%;
+}
+
+
+span.money-wallet{
+    float: right ;
+}
+
+
+.cart-wallet{
+    width: 100%;
+    max-width: 600px;
+    min-width: 300px;
+    min-height: 200px;
+    margin-top: 40px;
+    line-height: 3;
+    background-color:#323754;
+    border-radius:10px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    color: white;
+    padding: 2%;
+}
+
+.inside-wallet h3{
+    font-size: 20px;
+    margin-top: 2%;
+}
+
+.inside-wallet{
+    margin-left: 3%;
+    margin-top: 6%;
+    margin-right: 1%;
+    font-size: 20px;
+}
+
+.total-wallet{
+    font-weight: bold;
+}
+
+.payps-wallet{
+    width: 50%;
+    max-width: 380px;
+    margin-top: 30px;
+}
+
+
+
+.button-with-w{
+    margin-right: 10px;
+    margin-left: 10px;
+    margin-bottom: 5%;
+    background-color: #4885ed; /* Green */
+    border: none;
+    outline: none;
+    color: white;
+    padding: 15px;
+    font-weight: bolder;
+    font-size: 16px;
+    border-radius: 10px;
+    margin-top: 5%;
+    width: 200px;
+}
+.button-with-w:hover{
+    background-color: #03071b; 
+    color:white;
+}
+
+
+.arrange-details-p{
+    margin-left: 10%;
+    align-items: center;
+    font-size:16px;
+    font-weight: bold;
+    line-height: 1.7;
+    background-image: url("./navVignatree.png");
+    background-position-y: 100% ;
+    background-position-x: 2% ;
+    background-repeat: no-repeat; 
+    background-size: 450px 200px;
+}
+
+.arrange-details-p h3{
+    font-size: 20px;
+}
+
+.arrange-details-p img {
+    width: 15%;
+    max-width: 150px;
+    margin-left: 37%;
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+

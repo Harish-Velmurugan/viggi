@@ -1,0 +1,19 @@
+.dot {
+    height: 15px;
+    width: 15px;
+    background-color: red;
+    border-radius: 50%;
+    display: inline-block;
+  }
+
+.sec{
+    position: relative;
+    right: -13px;
+    top:-22px;
+}
+
+.counter.counter-lg {
+    top: -36px !important;
+}
+
+
