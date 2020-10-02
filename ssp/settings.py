@@ -368,7 +368,7 @@ DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
 
 
 # comment this line while working on local
-del DATABASES['default']['OPTIONS']['sslmode']
+#del DATABASES['default']['OPTIONS']['sslmode']
 
 
 # python manage.py makemigrations api chat comments forum lor monitorsolution post prototypetest smartcontract solutions updateapi users wiki helper communitychannel
