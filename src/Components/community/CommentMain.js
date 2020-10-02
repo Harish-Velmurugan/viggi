@@ -44,7 +44,7 @@ function CommentMain(props) {
     //   },
     // ]);
 
-    let url = `http://127.0.0.1:8000/community/replycomment/${id}/`;
+    let url = `/community/replycomment/${id}/`;
     axios
       .get(url)
       .then((response) => setreplies(response.data))
@@ -61,7 +61,7 @@ function CommentMain(props) {
       date: new Date(),
     };
 
-    let url = `http://127.0.0.1:8000/community/replycomment/add/`;
+    let url = `/community/replycomment/add/`;
     axios.post(url, newComment).then((response) => {
       setreplies([...replies, response.data]);
       console.log(response.data);

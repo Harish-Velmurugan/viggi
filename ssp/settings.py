@@ -346,6 +346,8 @@ REACT_ROUTES = [
     'list',
     'testing1',
     "companyAuth/:a/:code",
+    'companyAuth//',
+    'companyAuth/',
     "dashboard/communityList",
     "dashboard/community",
     "updateCompany",

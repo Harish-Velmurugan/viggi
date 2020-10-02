@@ -25,7 +25,7 @@ class Quote extends React.Component {
   async componentDidMount() {
     await axios
       .get(
-        "http://127.0.0.1:8000/helper/quoteView/" +
+        "/helper/quoteView/" +
           localStorage.getItem("username") +
           "/"
       )
@@ -36,7 +36,7 @@ class Quote extends React.Component {
     for (let i = 0; i < this.state.req.length; i++) {
       axios
         .get(
-          "http://127.0.0.1:8000/helper/quoteView2/" +
+          "/helper/quoteView2/" +
             this.state.req[i].reqID +
             "/"
         )
@@ -65,7 +65,7 @@ class Quote extends React.Component {
     };
     console.log(name)
     await axios
-      .post("http://127.0.0.1:8000/helper/dpagreed/"+ rid + "/", data, {
+      .post("/helper/dpagreed/"+ rid + "/", data, {
         headers: headers,
       })
       .then((response) => {

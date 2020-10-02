@@ -65,7 +65,7 @@ class Feed extends React.Component {
   async fetchPost(sort) {
     //Survey
     await axios
-      .get("http://127.0.0.1:8000/sol/getActiveSurvey/")
+      .get("/sol/getActiveSurvey/")
       .then((response) => {
         this.setState({ survey: response.data[0] });
         this.setState({ pblm: response.data[2] });

@@ -16,7 +16,7 @@ function YourCommunities(props) {
 
   const fetchCommunityList = () => {
     const username = localStorage.getItem("username");
-    let url = `http://127.0.0.1:8000/community/getyourcommunity/${username}/`;
+    let url = `/community/getyourcommunity/${username}/`;
     Axios.get(url)
       .then((response) => setcommunityList(response.data))
       .catch((e) => console.log(e));
@@ -24,7 +24,7 @@ function YourCommunities(props) {
 
   const allowMembers = (num) => {
     setchannelId(num);
-    let url = `http://127.0.0.1:8000/community/getunapprovemembers/${num}/`;
+    let url = `/community/getunapprovemembers/${num}/`;
     Axios.get(url)
       .then((response) => {
         setdetails(response.data);
@@ -39,7 +39,7 @@ function YourCommunities(props) {
       channelId,
       username,
     };
-    let url = `http://127.0.0.1:8000/community/allowmember/`;
+    let url = `/community/allowmember/`;
     Axios.post(url, newMember)
       .then((response) => {
         console.log(response.data);
@@ -54,7 +54,7 @@ function YourCommunities(props) {
       channelId,
       username,
     };
-    let url = `http://127.0.0.1:8000/community/blockmember/`;
+    let url = `/community/blockmember/`;
     Axios.post(url, newMember)
       .then((response) => {
         console.log(response.data);

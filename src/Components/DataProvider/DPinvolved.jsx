@@ -37,7 +37,7 @@ class DPinvolved extends React.Component {
       data.append("user", localStorage.getItem("username"));
       console.log(this.state.pblmInv[this.state.index][0].reqID)
       await axios.post(
-        "http://127.0.0.1:8000/helper/DPAttach/" +
+        "/helper/DPAttach/" +
           this.state.pblmInv[this.state.index][0].reqID +
           "/",
         data

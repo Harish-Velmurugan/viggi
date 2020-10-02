@@ -12,7 +12,7 @@ function PopularCommunities(props) {
   });
 
   const fetchCommunityList = () => {
-    let url = "http://127.0.0.1:8000/community/getcommunities/";
+    let url = "/community/getcommunities/";
     Axios.get(url)
       .then((response) => setcommunityList(response.data))
       .catch((e) => console.log(e));

@@ -117,7 +117,7 @@ function Community(props) {
       username,
       channelId: communityDetails.id,
     };
-    let url = `http://127.0.0.1:8000/community/checkuser/`;
+    let url = `/community/checkuser/`;
     Axios.post(url, user)
       .then((response) => {
         console.log(response.data);
@@ -136,7 +136,7 @@ function Community(props) {
   };
 
   const fetchCommunityChat = () => {
-    let url = `http://127.0.0.1:8000/community/getCommunityChat/${communityDetails.id}/`;
+    let url = `/community/getCommunityChat/${communityDetails.id}/`;
     Axios.get(url)
       .then((response) => setchats(response.data))
       .catch((e) => console.log(e));
@@ -144,7 +144,7 @@ function Community(props) {
 
   const sendMsg = () => {
     if (msg != "") {
-      let url = "http://127.0.0.1:8000/community/addChat/";
+      let url = "/community/addChat/";
       // let newMsg = {
       //   username: 1,
       //   name: "naveen rathnam",
@@ -181,7 +181,7 @@ function Community(props) {
       channelId: communityDetails.id,
       username,
     };
-    let url = "http://127.0.0.1:8000/community/joinCommunity/";
+    let url = "/community/joinCommunity/";
     Axios.post(url, newJoining)
       .then((response) => console.log(response))
       .catch((e) => console.log(e));

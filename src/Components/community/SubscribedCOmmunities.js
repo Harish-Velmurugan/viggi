@@ -13,7 +13,7 @@ function SubscribedCOmmunities(props) {
 
   const fetchCommunityList = () => {
     const username = localStorage.getItem("username");
-    let url = `http://127.0.0.1:8000/community/getsubscribedcommunity/${username}/`;
+    let url = `/community/getsubscribedcommunity/${username}/`;
     Axios.get(url)
       .then((response) => setcommunityList(response.data))
       .catch((e) => console.log(e));

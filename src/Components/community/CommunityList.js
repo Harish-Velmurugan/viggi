@@ -63,7 +63,7 @@ function CommunityList() {
     // formData.append("date", String(date));
     formData.append("img", img);
 
-    let url = "http://127.0.0.1:8000/community/createcommunity/";
+    let url = "/community/createcommunity/";
     Axios.post(url, formData)
       .then((response) => console.log(response))
       .catch((err) => console.log(err));
