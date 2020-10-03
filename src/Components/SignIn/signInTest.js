@@ -94,7 +94,7 @@ export default function SignInSide() {
           localStorage.setItem("username", response.data.user);
           localStorage.setItem("email", values.email);
           window.localStorage.setItem("signin", "true");
-
+          setlogin(true);
           // axios
           //   .get("/api/notifyCountGet/" + response.data.user + "/")
           //   .then((res) => {
@@ -111,6 +111,7 @@ export default function SignInSide() {
             .then((res) => {
               localStorage.setItem("mode", res.data.value);
               console.log(res.data.value);
+              setUser(res.data.value);
             })
             .catch((e) => console.log(e));
 
@@ -153,7 +154,7 @@ export default function SignInSide() {
     console.log(values);
   };
 
-  if (login && user == "user") {
+  if (login && (user == "user" || user == "company")) {
     return <Redirect to="/feed" />;
   }
   if (login && user == "vendor") {

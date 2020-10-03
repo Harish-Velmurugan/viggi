@@ -6,7 +6,7 @@ import Wallet from "../Wallet/wallet";
 import Hidden from "@material-ui/core/Hidden";
 import { DetailsContext } from "../../context/DetailsContext";
 import designer from "./designer.png";
-import axios from "axios"
+import axios from "axios";
 
 class Dashboard extends React.Component {
   constructor(props) {
@@ -24,14 +24,14 @@ class Dashboard extends React.Component {
     };
   }
 
-  async componentDidMount(){
-    await axios
-    .get("/api/getmode/"+localStorage.getItem("username")+"/")
-    .then(response =>
-    this.setState({userMode:response.data.user})
-    )
+  // async componentDidMount(){
+  //   await axios
+  //   .get("/api/getmode/"+localStorage.getItem("username")+"/")
+  //   .then(response =>
+  //   this.setState({userMode:response.data.user})
+  //   )
 
-  }
+  // }
   render() {
     console.log(this.state.userMode);
     if (!localStorage.getItem("username")) {

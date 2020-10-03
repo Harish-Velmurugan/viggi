@@ -18,7 +18,7 @@ class Navbar extends Component {
       count1: [],
       img: "",
       rp: "",
-      userMode: localStorage.getItem("userMode")
+      userMode: localStorage.getItem("mode"),
     };
     this.handleChange = this.handleChange.bind(this);
     this.notifyCount = this.notifyCount.bind(this);
@@ -58,7 +58,7 @@ class Navbar extends Component {
   }
   render() {
     //var c=this.state.count;
-    
+
     return localStorage.getItem("signin") == "true" ? (
       <div>
         <nav
@@ -102,164 +102,161 @@ class Navbar extends Component {
               className="navbar-nav mr-auto mt-2 mt-lg-0"
               style={{ fontSize: "14px", fontWeight: 600 }}
             >
-            {this.state.userMode=="user" ?
-              <li className="nav-item">
-              <div className="dropdown">
-                <Link
-                  to="/dashboard/ProblemInvolved"
-                  className="nav-link dropdown-toggle"
-                  id="dropdownMenuButton1"
-                  data-toggle="dropdown"
-                  aria-haspopup="true"
-                  aria-expanded="false"
-                >
-                  DASHBOARD
-                </Link>
-                
-                <div
-                  class="dropdown-menu"
-                  aria-labelledby="dropdownMenuButton1"
-                  style={{ backgroundColor: "#323754" }}
-                >
-                
-                  <Link
-                    to="/dashboard/ProblemInvolved"
-                    className="dropdown-item"
-                    style={{ color: "white" }}
-                  >
-                    INVOLVED PROBLEMS
-                  </Link>
-                  
-                  <Link
-                    to="/dashboard/ProblemPosted"
-                    className="dropdown-item"
-                    style={{ color: "white" }}
-                  >
-                    POSTED PROBLEMS
-                  </Link>
-                  <Link
-                    to="/dashboard/postproblem"
-                    className="dropdown-item"
-                    style={{ color: "white" }}
-                  >
-                    POST A PROBLEM
-                  </Link>
-                  <Link
-                    to="/dashboard/ExpiredProblem"
-                    className="dropdown-item"
-                    style={{ color: "white" }}
-                  >
-                    EXPIRED PROBLEMS
-                  </Link>
-                  <Link
-                    to="/dashboard/expertpanel"
-                    className="dropdown-item"
-                    style={{ color: "white" }}
-                  >
-                    EXPERT PANEL
-                  </Link>
+              {this.state.userMode == "user" ||
+              this.state.userMode == "company" ? (
+                <li className="nav-item">
+                  <div className="dropdown">
+                    <Link
+                      to="/dashboard/ProblemInvolved"
+                      className="nav-link dropdown-toggle"
+                      id="dropdownMenuButton1"
+                      data-toggle="dropdown"
+                      aria-haspopup="true"
+                      aria-expanded="false"
+                    >
+                      DASHBOARD
+                    </Link>
 
-                  <Link
-                    to="/dashboard/solPrototypeDb"
-                    className="dropdown-item"
-                    style={{ color: "white" }}
-                  >
-                    PROTOTYPE & TEST
-                  </Link>
-                  <Link
-                    to="/dashboard/Trending"
-                    className="dropdown-item"
-                    style={{ color: "white" }}
-                  >
-                    TRENDING
-                  </Link>
-                  <Link
-                    to="/dashboard/problemRefining"
-                    className="dropdown-item"
-                    style={{ color: "white" }}
-                  >
-                    PROBLEM REFINING
-                  </Link>
-                  <Link
-                    to="/dashboard/helpers"
-                    className="dropdown-item"
-                    style={{ color: "white" }}
-                  >
-                    HELPERS
-                  </Link>
-                </div>
-                </div>
-              </li>
-              :
-              <li className="nav-item">
-              <div className="dropdown">
-                <Link
-                  to="/dashboard/ProblemInvolved"
-                  className="nav-link dropdown-toggle"
-                  id="dropdownMenuButton1"
-                  data-toggle="dropdown"
-                  aria-haspopup="true"
-                  aria-expanded="false"
-                >
-                  DASHBOARD
-                </Link>
-                
-                <div
-                  class="dropdown-menu"
-                  aria-labelledby="dropdownMenuButton1"
-                  style={{ backgroundColor: "#323754" }}
-                >
-                
-                  <Link
-                    to="/dashboard/DataProviderProblemInvolved"
-                    className="dropdown-item"
-                    style={{ color: "white" }}
-                  >
-                    INVOLVED PROBLEMS
-                  </Link>
-                  <Link
-                    to="/dashboard/Trending"
-                    className="dropdown-item"
-                    style={{ color: "white" }}
-                  >
-                    TRENDING
-                  </Link>
+                    <div
+                      class="dropdown-menu"
+                      aria-labelledby="dropdownMenuButton1"
+                      style={{ backgroundColor: "#323754" }}
+                    >
+                      <Link
+                        to="/dashboard/ProblemInvolved"
+                        className="dropdown-item"
+                        style={{ color: "white" }}
+                      >
+                        INVOLVED PROBLEMS
+                      </Link>
+
+                      <Link
+                        to="/dashboard/ProblemPosted"
+                        className="dropdown-item"
+                        style={{ color: "white" }}
+                      >
+                        POSTED PROBLEMS
+                      </Link>
+                      <Link
+                        to="/dashboard/postproblem"
+                        className="dropdown-item"
+                        style={{ color: "white" }}
+                      >
+                        POST A PROBLEM
+                      </Link>
+                      <Link
+                        to="/dashboard/ExpiredProblem"
+                        className="dropdown-item"
+                        style={{ color: "white" }}
+                      >
+                        EXPIRED PROBLEMS
+                      </Link>
+                      <Link
+                        to="/dashboard/expertpanel"
+                        className="dropdown-item"
+                        style={{ color: "white" }}
+                      >
+                        EXPERT PANEL
+                      </Link>
+
+                      <Link
+                        to="/dashboard/solPrototypeDb"
+                        className="dropdown-item"
+                        style={{ color: "white" }}
+                      >
+                        PROTOTYPE & TEST
+                      </Link>
+                      <Link
+                        to="/dashboard/Trending"
+                        className="dropdown-item"
+                        style={{ color: "white" }}
+                      >
+                        TRENDING
+                      </Link>
+                      <Link
+                        to="/dashboard/problemRefining"
+                        className="dropdown-item"
+                        style={{ color: "white" }}
+                      >
+                        PROBLEM REFINING
+                      </Link>
+                      <Link
+                        to="/dashboard/helpers"
+                        className="dropdown-item"
+                        style={{ color: "white" }}
+                      >
+                        HELPERS
+                      </Link>
+                    </div>
                   </div>
+                </li>
+              ) : (
+                <li className="nav-item">
+                  <div className="dropdown">
+                    <Link
+                      to="/dashboard/ProblemInvolved"
+                      className="nav-link dropdown-toggle"
+                      id="dropdownMenuButton1"
+                      data-toggle="dropdown"
+                      aria-haspopup="true"
+                      aria-expanded="false"
+                    >
+                      DASHBOARD
+                    </Link>
+
+                    <div
+                      class="dropdown-menu"
+                      aria-labelledby="dropdownMenuButton1"
+                      style={{ backgroundColor: "#323754" }}
+                    >
+                      <Link
+                        to="/dashboard/DataProviderProblemInvolved"
+                        className="dropdown-item"
+                        style={{ color: "white" }}
+                      >
+                        INVOLVED PROBLEMS
+                      </Link>
+                      <Link
+                        to="/dashboard/Trending"
+                        className="dropdown-item"
+                        style={{ color: "white" }}
+                      >
+                        TRENDING
+                      </Link>
+                    </div>
                   </div>
+                </li>
+              )}
+              &nbsp;&nbsp;
+              {this.state.userMode == "user" ||
+              this.state.userMode == "company" ? (
+                <>
+                  <li className="nav-item">
+                    <Link className="nav-link" to="/feed">
+                      FEED
+                    </Link>
                   </li>
-              
-            }
-              &nbsp;&nbsp;
-              {this.state.userMode=="user"?
-              <>
-              <li className="nav-item">
-                <Link className="nav-link" to="/feed">
-                  FEED
-                </Link>
-              </li>
-              
-              &nbsp;&nbsp;
-              <li className="nav-item">
-                <Link className="nav-link" to="/forum">
-                  FORUM
-                </Link>
-              </li>
-              &nbsp;&nbsp;
-              
-              <li className="nav-item">
-                <Link className="nav-link" to="/wiki">
-                  WIKI
-                </Link>
-              </li>
-              &nbsp;&nbsp;
-              </>
-              :
-              <li className="nav-item">
-                <Link className="nav-link" to="/DataProviderFeed">
-                  FEED
-                </Link>
-              </li>
-              }
+                  &nbsp;&nbsp;
+                  <li className="nav-item">
+                    <Link className="nav-link" to="/forum">
+                      FORUM
+                    </Link>
+                  </li>
+                  &nbsp;&nbsp;
+                  <li className="nav-item">
+                    <Link className="nav-link" to="/wiki">
+                      WIKI
+                    </Link>
+                  </li>
+                  &nbsp;&nbsp;
+                </>
+              ) : (
+                <li className="nav-item">
+                  <Link className="nav-link" to="/DataProviderFeed">
+                    FEED
+                  </Link>
+                </li>
+              )}
               <li className="nav-item">
                 <Link className="nav-link" to="/solver">
                   LEADERBOARD
