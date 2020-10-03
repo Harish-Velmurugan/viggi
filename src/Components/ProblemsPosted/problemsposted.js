@@ -27,6 +27,15 @@ class ProblemsPosted extends React.Component {
         });
       });
   }
+  componentDidMount() {
+    axios
+      .get(`/dashboard/dashboard-ppp-view/${localStorage.getItem("username")}/`)
+      .then((response) => {
+        this.setState({
+          problemsPosted: response.data,
+        });
+      });
+  }
 
   viewsolution() {
     return <Redirect to="/abstract" />;
@@ -93,7 +102,7 @@ class ProblemsPosted extends React.Component {
                           <Link
                             to={{
                               pathname: "/abstract",
-                              state: { query: problemPosted , seeker:true},
+                              state: { query: problemPosted, seeker: true },
                             }}
                           >
                             {problemPosted.title}

@@ -641,19 +641,28 @@ def fetchAns(request,sid):
       return Response([serializer.data,ser2,ser3.data,ser4.data],safe=False)
 
 @api_view(["GET"])
-def getSurvey(request):
+def getSurvey(request,uid):
       survey = CreateSurvey.objects.filter(alive = False)
       serializer = CreateSurveySerializer(survey,many=True)
       
       ser1=[]
       ser2=[]
+      ser3=[]
       for i in range(len(survey)):
             user = User_Personal.objects.get(username=serializer.data[i]['creator'])
             ser1.append((user_personal_serializer(user)).data)
 
             pblm = Post.objects.get(problemId = serializer.data[i]['pblmID'])
             ser2.append((PostSerializer(pblm)).data)
-      return Response([serializer.data,ser1,ser2],safe=False)
+
+            sur = TakeSurvey.objects.filter(survey=serializer.data[i]['surveyID'],name=uid)
+            # ser3.append((TakeSurveySerializer(sur,many=True)).data)
+            ser = TakeSurveySerializer(sur,many=True).data
+            if(len(ser)==0):
+                  ser3.append(True)
+            else:
+                  ser3.append(False)
+      return Response([serializer.data,ser1,ser2,ser3],safe=False)
 
 
 

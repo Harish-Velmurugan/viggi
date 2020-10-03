@@ -49,7 +49,7 @@ class Logout extends React.Component {
         >
           <div
             className="left"
-            style={{ backgroundColor: "#323754", width: "30%" }}
+            style={{ backgroundColor: "#323754", width: "50%" }}
           >
             <img
               src={logo1}
@@ -67,6 +67,7 @@ class Logout extends React.Component {
               backgroundBlendMode: "screen",
               backgroundColor: "#323754",
               textAlign: "center",
+              width: "50%",
             }}
           >
             <h3 style={{ marginTop: "3%" }}>

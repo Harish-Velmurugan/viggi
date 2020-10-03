@@ -4,6 +4,7 @@ import Navbar from "../Navbar/nav";
 import { Multiselect } from "multiselect-react-dropdown";
 import "./update.css";
 import { Redirect } from "react-router";
+import { DOMAINS } from "../../variables";
 
 class UpdateProfile extends Component {
   constructor(props) {
@@ -33,16 +34,8 @@ class UpdateProfile extends Component {
       selectedValue: [],
       personal: false,
       professional: false,
-      options: [
-        { name: "Algorithms", id: 1 },
-        { name: "Cryptography", id: 2 },
-        { name: "Distributed Computing", id: 3 },
-        { name: "Cloud Computing", id: 4 },
-        { name: "Computational Learning", id: 5 },
-        { name: "Computer Vision", id: 6 },
-        { name: "Big Data", id: 7 },
-        { name: "Block Chain", id: 8 },
-      ],
+      options: DOMAINS,
+      error: {},
     };
     this.handleChange = this.handleChange.bind(this);
     this.handleChangei = this.handleChangei.bind(this);
@@ -53,7 +46,6 @@ class UpdateProfile extends Component {
   }
 
   async componentDidMount() {
-    console.log(localStorage.getItem("userMode"));
     let sig = JSON.parse(this.props.location.state.sign)
       ? JSON.parse(this.props.location.state.sign)
       : false;
@@ -138,9 +130,53 @@ class UpdateProfile extends Component {
     // document.getElementById("profileImage").src= imag
     // this.setState({img:imag})
   };
+  formValidation = () => {
+    let error = {};
+    if (!this.state.img) {
+      error["imgError"] = "Required !";
+    } else {
+      delete error.imgError;
+    }
+    // if (!this.state.username) {
+    //   error["usernameError"] = "Required !";
+    // } else {
+    //   delete error.usernameError;
+    // }
+    // if (!this.state.phone) {
+    //   error["phoneError"] = "Required !";
+    // } else {
+    //   delete error.phoneError;
+    // }
+    // if (!this.state.nationality) {
+    //   error["nationalityError"] = "Required !";
+    // } else {
+    //   delete error.nationalityError;
+    // }
+    // if (!this.state.location) {
+    //   error["locationError"] = "Required !";
+    // } else {
+    //   delete error.locationError;
+    // }
+    // if (!this.state.pin) {
+    //   error["pinError"] = "Required !";
+    // } else {
+    //   delete error.pinError;
+    // }
+    // if (!this.state.strength) {
+    //   error["strengthError"] = "Required !";
+    // } else {
+    //   delete error.strengthError;
+    // }
+    console.log(error);
+    this.setState({ error: error });
+    return Object.keys(error).length ? true : false;
+  };
 
   handleSubmit1(e) {
     e.preventDefault();
+
+    if (this.formValidation()) return;
+
     this.setState({
       profilecomplete: 50,
     });
@@ -272,6 +308,7 @@ class UpdateProfile extends Component {
                     }}
                   />
                 </label>
+                <p>{this.state.error.imgError && this.state.error.imgError}</p>
               </div>
             </div>
             <div className="col-sm-12 col-md-8" style={{ padding: "0px" }}>
@@ -284,8 +321,17 @@ class UpdateProfile extends Component {
                 className="Card"
                 style={{ fontSize: "12pt", fontColor: "grey" }}
               >
-                I am a solver/seeker and work on ingenious challenges to bring a
-                change to our environment.
+                {localStorage.getItem("mode") === "user" ? (
+                  <div>
+                    I am a solver/seeker and work on ingenious challenges to
+                    bring a change to our environment.
+                  </div>
+                ) : (
+                  <div>
+                    We are a renowed company looking forward to collaborate and
+                    work with self motivated intellects.
+                  </div>
+                )}
               </div>
             </div>
           </div>

@@ -154,7 +154,7 @@ class createWiki extends Component {
         </Link>
 
         <span>
-          <Link>
+          {/* <Link>
             <a />
             <img
               class="float-right mr-5 mb-4 box1"
@@ -163,7 +163,7 @@ class createWiki extends Component {
               height="50px"
               width="50px"
             />
-          </Link>
+          </Link> */}
 
           <h4 className="ml-5" style={{ color: "grey" }}>
             Start Creating Your Wiki....

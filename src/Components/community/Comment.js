@@ -45,9 +45,9 @@ function Comments(props) {
   const [comments, setcomments] = useState(null);
 
   const [userDetails, setuserDetails] = useState({
-    name: "Naveen",
-    username: "1",
-    profileImage: "https://react.semantic-ui.com/images/avatar/small/joe.jpg",
+    name: localStorage.getItem("name"),
+    username: localStorage.getItem("username"),
+    profileImage: localStorage.getItem("profileImg"),
   });
 
   const [replyForm, setreplyForm] = useState("");

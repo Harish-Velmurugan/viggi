@@ -179,6 +179,7 @@ export default function SignInSide() {
             initialValues={initialValue}
             validationSchema={validationSchema}
             onSubmit={onsubmit}
+            enableReinitialize
           >
             <Form className={classes.form} noValidate>
               <Field

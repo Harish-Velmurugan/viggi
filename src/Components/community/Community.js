@@ -156,13 +156,10 @@ function Community(props) {
 
       let formdata = new FormData();
       formdata.append("username", username);
-      formdata.append("name", "naveen");
+      formdata.append("name", localStorage.getItem("name"));
       formdata.append("img", img);
       formdata.append("body", msg);
-      formdata.append(
-        "profileImg",
-        "https://react.semantic-ui.com/images/avatar/small/joe.jpg"
-      );
+      formdata.append("profileImg", localStorage.getItem("profileImg"));
       formdata.append("channelId", communityDetails.id + "");
 
       Axios.post(url, formdata)

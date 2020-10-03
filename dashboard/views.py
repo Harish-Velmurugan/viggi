@@ -181,13 +181,36 @@ def postedProblemView(request,pk,un):
         
     return response(ser1,safe=False)
 
+# @api_view(['GET'])
+# def feedview(request,un):
+#     print(config('SECRET_KEY'))
+#     task=Post.objects.filter(solved=False,expired=False)
+#     serializer=PostSerializer2(task,many=True)
+#     task2 = User_Profile.objects.filter(username=un)
+#     serializer2=user_profile_serializer(task2,many=True)
+#     content=[serializer.data,serializer2.data]
+#     return response(content,safe=False)
 @api_view(['GET'])
-def feedview(request,un):
-    print(config('SECRET_KEY'))
-    task=Post.objects.filter(solved=False,expired=False)
-    serializer=PostSerializer2(task,many=True)
+def feedview(request,un,st):
+
     task2 = User_Profile.objects.filter(username=un)
     serializer2=user_profile_serializer(task2,many=True)
+   
+    if st=="new" or st==" ":   
+        task=Post.objects.all().order_by("-posteddate")
+    elif st=="old":   
+        task=Post.objects.all().order_by("posteddate")
+    elif st=="big":   
+        task=Post.objects.all().order_by("-RnD_Budget")
+    elif st=="small":   
+        task=Post.objects.all().order_by("RnD_Budget")
+    elif st=="near":
+        task=Post.objects.filter(expired= False).order_by("deadline")
+    elif st=="far":   
+        task=Post.objects.filter(expired= False).order_by("-deadline")
+    else:
+        task=Post.objects.all().order_by("-posteddate")
+    serializer=PostSerializer2(task,many=True)      
     content=[serializer.data,serializer2.data]
     return response(content,safe=False)
 
@@ -618,3 +641,4 @@ def usersList(request):
     for i in range(len(task)):
         dic.append(serializer.data)
     return response(serializer.data,safe=False)
+

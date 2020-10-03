@@ -71,9 +71,11 @@ class Profile2 extends React.Component {
       //    this.setState({professionaldetails:response.data[3]})
       console.log(localStorage.getItem("mode"));
       var dat2 = response.data[2];
-      if(localStorage.getItem("mode")!= "company"){
-        var ad = response.data[3][0].domains;}
-      else{ var ad = response.data[2][0].domains;}  
+      if (localStorage.getItem("mode") != "company") {
+        var ad = response.data[3][0].domains;
+      } else {
+        var ad = response.data[2][0].domains;
+      }
       var dd = response.data[6];
 
       var lv = response.data[5][0].level;
@@ -223,25 +225,16 @@ class Profile2 extends React.Component {
                       </div>
                     </div>
                     <div className="row">
-                      
-                      {
-                      (() => {
-        if (localStorage.getItem("mode") != "company") {
-          return (
-            <div className="col-md-6">
-            <label>Specialization</label>
-            </div>
-           
-          )
-        }  else {
-          return (
-            <div> </div>
-          )
-        }
-      })()}
-                      <div className="col-md-6">
-                        <p>{this.state.specialization}</p>
-                      </div>
+                      {localStorage.getItem("mode") !== "company" ? (
+                        <div>
+                          <div className="col-md-6">
+                            <label>Specialization</label>
+                          </div>
+                          <div className="col-md-6">
+                            <p>{this.state.specialization}</p>
+                          </div>
+                        </div>
+                      ) : null}
                     </div>
                   </div>
                   <div

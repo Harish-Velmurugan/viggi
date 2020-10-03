@@ -173,7 +173,7 @@ def companyApplyView(request):
 
         print(u, c)
 
-        msg = 'to accept click here http://vignatree.herokuapp.com/companyAuth/' + u + '/' + c + '/'
+        msg = 'to accept click here http://vignatree.herokuapp.com/companyAuth/' + u + '/' + c
 
         send_mail('Request from company', msg,
                   # admin mail id

@@ -13,9 +13,9 @@ function CommentMain(props) {
   const handleChange = (event) => setreplyForm(event.target.value);
 
   const [userDetails, setuserDetails] = useState({
-    name: "Naveen",
-    username: "8",
-    profileImage: "https://react.semantic-ui.com/images/avatar/small/joe.jpg",
+    name: localStorage.getItem("name"),
+    username: localStorage.getItem("username"),
+    profileImage: localStorage.getItem("profileImg"),
   });
 
   useEffect(() => {

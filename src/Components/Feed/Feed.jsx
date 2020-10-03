@@ -45,6 +45,7 @@ class Feed extends React.Component {
       survey: [],
       pblm: [],
       creator: [],
+      acc:[],
       options: [
         { key: 1, text: "Choice 1", value: 1 },
         { key: 2, text: "Choice 2", value: 2 },
@@ -65,11 +66,12 @@ class Feed extends React.Component {
   async fetchPost(sort) {
     //Survey
     await axios
-      .get("/sol/getActiveSurvey/")
+      .get("/sol/getActiveSurvey/"+localStorage.getItem("username") +"/")
       .then((response) => {
         this.setState({ survey: response.data[0] });
         this.setState({ pblm: response.data[2] });
         this.setState({ creator: response.data[1] });
+        this.setState({ acc: response.data[3] });
       });
 
     const url =
@@ -246,6 +248,8 @@ class Feed extends React.Component {
               })}
               <div>
                 {this.state.survey.map((x, index) => (
+                  <>
+                  {this.state.acc[index] && (
                   <div>
                     <div
                       className="card"
@@ -288,6 +292,8 @@ class Feed extends React.Component {
                     </div>
                     <br />
                   </div>
+                  )}
+                  </>
                 ))}
               </div>
 

@@ -39,6 +39,8 @@ class Navbar extends Component {
         img: dat2[0].img,
         rp: response.data[5][0].rp,
       });
+      localStorage.setItem("profileImg", dat2[0].img);
+      localStorage.setItem("name", dat2[0].firstname + " " + dat2[0].lastname);
     });
   }
   notify = () => {

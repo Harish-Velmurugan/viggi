@@ -6,25 +6,19 @@ import Axios from "axios";
 
 function AdminPage() {
   let { a, code } = useParams();
-  const [value, setvalue] = useState(null);
-  //   const [companyDetails, setcompanyDetails] = useState({
-  //     name: "facebook.com",
-  //   });
-  //   cons
-  //   //   useEffect(() => {
+  const [Msg, setMsg] = useState(null);
 
-  //   //   })
   const allowButton = () => {
     let url = `/api/companyAccepted/${a}/${code}/`;
     Axios.post(url)
-      .then((res) => setvalue(res.data.value))
+      .then((res) => setMsg("Approved"))
       .catch((res) => console.log(res));
   };
 
   const denyButton = () => {
     let url = `/api/companyDeclined/${a}/${code}/`;
     Axios.post(url)
-      .then((res) => setvalue(res.data.value))
+      .then((res) => setMsg("Declined"))
       .catch((res) => console.log(res));
   };
   return (
@@ -34,23 +28,28 @@ function AdminPage() {
           External Company Authentication
         </Header>
         <Segment attached>
-          {/* <Header as="h3">
-          {a + " "}
-          <Header.Content>
-            has requested to be a part of our Vignatree.
-          </Header.Content>
-        </Header> */}
-          <Header
-            as="h2"
-            content={a}
-            subheader="has requested to be a part of our Vignatree."
-          />
-          <Button color="green" onClick={() => allowButton()}>
-            Allow
-          </Button>
-          <Button color="red" onClick={() => denyButton()}>
-            deny
-          </Button>
+          {!Msg ? (
+            <div>
+              <Header
+                as="h2"
+                content={a}
+                subheader="has requested to be a part of our Vignatree."
+              />
+              <Button color="green" onClick={() => allowButton()}>
+                Allow
+              </Button>
+              <Button color="red" onClick={() => denyButton()}>
+                deny
+              </Button>
+            </div>
+          ) : (
+            <div>
+              <Header as="h3" color={Msg === "Declined" ? "red" : "green"}>
+                {a}
+              </Header>
+              <Header as="h5">{" Company has been " + Msg}</Header>
+            </div>
+          )}
         </Segment>
       </Segment>
     </div>
