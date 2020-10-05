@@ -361,9 +361,9 @@ if not IS_CI:
 
 # File Storage
 CLOUDINARY_STORAGE = {
-    'CLOUD_NAME': 'hyadgtdv2',
-    'API_KEY': '185496183979819',
-    'API_SECRET': 'bhi1Md8ehOB8RQf_eT0XZQOdenQ',
+    'CLOUD_NAME': 'hesrysoft',
+    'API_KEY': '774526368576348',
+    'API_SECRET': 'vonrUQjmdLLFWiZyUihtN-G-3XA',
     # 'STATICFILES_MANIFEST_ROOT': os.path.join(BASE_DIR, 'my-manifest-directory')
 }
 DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'

@@ -3,6 +3,8 @@ import { Redirect } from "react-router";
 import "../SignIn/SignIn.css";
 import { Spinner } from "react-bootstrap";
 import logo1 from "./logo1.png";
+import LogoutImageBG from "./Login.jpg";
+import LGBG from "./logoutBg.jpg";
 
 class Logout extends React.Component {
   constructor(props) {
@@ -32,14 +34,14 @@ class Logout extends React.Component {
       <div
         style={{
           padding: "5%",
-          backgroundImage: "url('login.jpg')",
-          height: "657px",
+          backgroundImage: `url(${LogoutImageBG})`,
+          height: "100vh",
           backgroundBlendMode: "screen",
           backgroundColor: "gray",
         }}
       >
         <div
-          className="split"
+          className="split1"
           style={{
             height: "500px",
             overflow: "hidden",
@@ -48,26 +50,24 @@ class Logout extends React.Component {
           }}
         >
           <div
-            className="left"
-            style={{ backgroundColor: "#323754", width: "50%" }}
+            className="left1"
+            style={{ backgroundColor: "#323754", width: "30%" }}
           >
             <img
               src={logo1}
-              alt="img"
               height="400"
               width="350"
               style={{ marginTop: "12.5%", marginLeft: "3%" }}
             />
           </div>
           <div
-            className="right"
+            className="right1"
             style={{
-              backgroundImage: "url('logoutBg.jpg')",
+              backgroundImage: `url(${LGBG})`,
               height: "657px",
               backgroundBlendMode: "screen",
               backgroundColor: "#323754",
               textAlign: "center",
-              width: "50%",
             }}
           >
             <h3 style={{ marginTop: "3%" }}>
@@ -92,5 +92,4 @@ class Logout extends React.Component {
     );
   }
 }
-
 export default Logout;
