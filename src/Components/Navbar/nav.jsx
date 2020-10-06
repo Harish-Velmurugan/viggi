@@ -348,6 +348,7 @@ class Navbar extends Component {
                 >
                   WALLET
                 </Link>
+                {this.state.userMode == "user" ?(
                 <Link
                   class="dropdown-item"
                   to={{ pathname: "/update", state: { sign: "false" } }}
@@ -355,6 +356,16 @@ class Navbar extends Component {
                 >
                   UPDATE PROFILE
                 </Link>
+                ):(
+                  <Link
+                  class="dropdown-item"
+                  to={{ pathname: "/updateCompany", state: { sign: "false" } }}
+                  style={{ color: "white" }}
+                >
+                  UPDATE PROFILE
+                </Link>
+
+                )}
                 <div
                   class="dropdown-divider"
                   style={{ marginRight: "10px", marginLeft: "10px" }}

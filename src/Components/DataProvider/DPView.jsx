@@ -8,6 +8,15 @@ class DPView extends React.Component {
     this.state = {
       domains: [
         "Artificial Intelligence",
+        "Algorithms",
+        "Cryptography",
+        "Distributed Computing",
+        "Computer Vision",
+        "Big Data",
+        "Computational Learning",
+        "Computer Vision",
+        "Medicine",
+        "Block Chain",
         "BioTech",
         "Covid",
         "Machine Learning",

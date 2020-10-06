@@ -13,6 +13,7 @@ urlpatterns = [
 
     path('company-apply/', views.companyApplyView, name="companyapplied"),
     path('companyrequest/<str:un>/<str:code>/', views.companyRequest, name="companyapplied"),
+    path('delCode/<str:un>/<str:code>/', views.delCode, name="deleteCode"),
     path('companyAccepted/<str:un>/<str:code>/', views.companyAccepted, name="companyaccepted"),
     path('companyDeclined/<str:un>/<str:code>/', views.companyDeclined, name="companydeclined"),
 

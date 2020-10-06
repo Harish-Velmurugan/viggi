@@ -89,7 +89,7 @@ class CUpdateProfile extends Component {
         username: data.username,
         location: data.location,
         strength: data.strength,
-
+        firstname:data.firstname,
         phone: data.phone,
         nationality: data.nationality,
         pin: data.pin,
@@ -197,7 +197,7 @@ class CUpdateProfile extends Component {
     let form_data = new FormData();
     let username = localStorage.getItem("username");
 
-    form_data.append("firstname", this.state.name);
+    form_data.append("firstname", this.state.firstname);
     form_data.append("lastname", this.state.lastname);
     form_data.append("location", this.state.location);
     form_data.append("displaydomains", JSON.stringify(this.state.domains));
@@ -212,7 +212,8 @@ class CUpdateProfile extends Component {
 
     var url = "";
     if (!this.state.signup) {
-      var url = `/api/user-personal-create/`;
+      var url = `/api/user-personal-update/${Number(username)}/`;
+      var _url = `/api/user-professional-update/${Number(username)}/`;
     } else {
       url = `/api/user-personal-create/`;
       var url2 = `/api/user-profile-view/`;
@@ -222,6 +223,9 @@ class CUpdateProfile extends Component {
       "Content-Type": "multipart/form-data",
       Authorization: token,
     };
+    axios.post(_url, form_data, {
+      headers: headers,
+    });
     axios
       .post(url, form_data, {
         headers: headers,
@@ -336,9 +340,9 @@ class CUpdateProfile extends Component {
                   <input
                     type="text"
                     className="form-control"
-                    id="name"
-                    value={this.state.username}
-                    name="name"
+                    id="firstname"
+                    value={this.state.firstname}
+                    name="firstname"
                     onChange={this.handleChange}
                     required
                   />
@@ -360,7 +364,7 @@ class CUpdateProfile extends Component {
                   />
                   <p>{error.phoneError && error.phoneError}</p>
                 </div>
-                <div className="form-group col-md-4">
+                <div className="form-group col-md-6">
                   <label htmlFor="nationality">Country of Residence</label>
                   <select
                     id="nationality"
@@ -713,7 +717,7 @@ class CUpdateProfile extends Component {
                       type="submit"
                       className="btn btn-primary"
                       id="prof"
-                      style={{ width: "20%" }}
+                      style={{ width: "25%" }}
                     >
                       &nbsp;Update&nbsp;
                     </button>

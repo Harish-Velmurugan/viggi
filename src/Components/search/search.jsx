@@ -79,7 +79,7 @@ class Search extends React.Component {
   }
 
   componentDidMount() {
-    let q = this.props.location.state.query || "";
+    let q = this.props.location.state.query;
     let url_1 = "/search/" + q + "/";
     Axios.get(url_1).then((response) => {
       this.setState({ search: response.data });
@@ -166,31 +166,41 @@ class Search extends React.Component {
                                 />
                               </div>
                               <div className="pt-2 pl-2 col-sm-8">
-                                <Link
+                                {/* <Link
                                   href=""
                                   style={{ textDecoration: "none" }}
-                                >
-                                  <h5
-                                    className="mb-0"
-                                    style={{ color: "black" }}
-                                  >
-                                    <strong>{profile.firstname}</strong>
-                                  </h5>
+                                > */}
+                                <h5 className="mb-0" style={{ color: "black" }}>
+                                  <strong>{profile.firstname}</strong>
+                                </h5>
 
-                                  <p
-                                    style={{ fontSize: "14px", color: "black" }}
-                                    className="mb-0 pt-1"
-                                  >
+                                <p
+                                  style={{ fontSize: "14px", color: "black" }}
+                                  className="mb-0 pt-1"
+                                >
+                                  {this.state.professional[index][0]
+                                    .specialization == "" ? (
+                                    <i
+                                      className="fa fa-building"
+                                      style={{ padding: "0px" }}
+                                    />
+                                  ) : (
                                     <i
                                       className="fa fa-graduation-cap"
                                       style={{ padding: "0px" }}
                                     />
-                                    &nbsp;
-                                    {
-                                      this.state.professional[index][0]
-                                        .qualification
-                                    }
-                                  </p>
+                                  )}
+                                  &nbsp;
+                                  {this.state.professional[index][0]
+                                    .specialization == ""
+                                    ? "Company"
+                                    : this.state.professional[index][0]
+                                        .qualification}
+                                </p>
+                                {this.state.professional[index][0]
+                                  .specialization == "" ? (
+                                  profile.location
+                                ) : (
                                   <div
                                     style={{
                                       fontSize: "14px",
@@ -203,8 +213,9 @@ class Search extends React.Component {
                                         .specialization
                                     }
                                   </div>
-                                  <p />
-                                </Link>
+                                )}
+                                <p />
+                                {/* </Link> */}
                               </div>
                             </div>
                           </div>
@@ -234,7 +245,7 @@ class Search extends React.Component {
                               </div>
 
                               <div className="pt-2 pl-2 col-sm-12 col-md-9">
-                                <Link
+                                <div
                                   style={{
                                     textDecoration: "none",
                                     color: "black",
@@ -278,7 +289,7 @@ class Search extends React.Component {
                                       {challenges.sol_count}
                                     </strong>
                                   </p>
-                                </Link>
+                                </div>
                               </div>
                             </div>
                           </div>

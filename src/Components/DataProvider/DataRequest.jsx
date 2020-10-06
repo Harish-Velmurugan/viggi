@@ -11,7 +11,17 @@ class DataProviderReq extends React.Component {
       setShow: false,
       //other: false,
       options: [
-        "Artificial Intelligence", "BioTech", "Covid", "Machine Learning", "Other"
+        "Artificial Intelligence", "BioTech", "Covid", "Machine Learning", 
+        "Algorithms",
+        "Cryptography",
+        "Distributed Computing",
+        "Computer Vision",
+        "Big Data",
+        "Computational Learning",
+        "Computer Vision",
+        "Medicine",
+        "Block Chain",
+        "Other"
       ],
       domain: "",
       newDomain: "",

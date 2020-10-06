@@ -143,35 +143,26 @@ class SolversNav extends Component {
                   >
                     <option selected>{this.state.specialization1}</option>
                     <option>-----------------------------</option>
-                    <option>CS - Computer Theory</option>
+                    <option>Computer Theory</option>
                     <option>Algorithms </option>
                     <option>Cryptography</option>
-                    <option>CS - Distributed Computing</option>
-                    <option>CS - Cloud Computing </option>
-                    <option>CS - Computational Learning </option>
+                    <option>Distributed Computing</option>
+                    <option>Cloud Computing </option>
+                    <option>Computational Learning </option>
                     <option>ComputerVision </option>
-                    <option>CS - Big Data </option>
-                    <option>CS - Neural Networks</option>
-                    <option>AE - Fluid Dynamics</option>
-                    <option>AE - Materials sciences</option>
-                    <option>AE - Structural Analysis</option>
+                    <option>Big Data </option>
+                    <option>Neural Networks</option>
+                    <option>Fluid Dynamics</option>
+                    <option>Materials sciences</option>
+                    <option>Structural Analysis</option>
                     <option>Propulsion</option>
-                    <option>AE - Automatic Control and Guidance</option>
+                    <option>Automatic Control and Guidance</option>
                     <option>
-                      AE - Aircraft Performance and Aircraft Structures
+                      Aircraft Performance and Aircraft Structures
                     </option>
-                    <option>EE - Power</option>
-                    <option>EE - Electronics</option>
-                    <option>EE - Microelectronics and nanoelectronics</option>
-                    <option>EE - Signal processing</option>
-                    <option>EE - Telecommunications</option>
-                    <option>EE - Instrumentation</option>
-                    <option>EE - Computers</option>
-                    <option>CI - Geotechnical Engineering</option>
-                    <option>CI - Structural Engineering</option>
-                    <option>CI - Transport Engineering</option>
-                    <option>CI - Environmental Engineering</option>
-                    <option>CI - Urban and Community Planning</option>
+                    <option>Power</option>
+                    <option>Electronics</option>
+                    <option>Microelectronics and nanoelectronics</option>
                   </select>
                 </div>
 
@@ -242,7 +233,7 @@ class SolversNav extends Component {
                     <th>Rank</th>
                     <th>Solver Name</th>
                     <th>Points</th>
-                    <th>Speclization</th>
+                    <th>Domains</th>
                   </tr>
                 </thead>
                 {this.state.profile.map((da, i) => (
@@ -256,7 +247,12 @@ class SolversNav extends Component {
                       </td>
                       {console.log(this.state.profile)}
                       <td>{da.rp}</td>
-                      <td>{this.state.professional[i].specialization}</td>
+                      <td>
+                        {this.state.professional[i].domains}
+                        {/* {this.state.professional[i].specialization == ""
+                          ? "This is a Company"
+                          : this.state.professional[i].specialization} */}
+                      </td>
                     </tr>
                   </tbody>
                 ))}

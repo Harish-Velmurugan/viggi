@@ -7,6 +7,7 @@ import Navbar from "../Navbar/nav";
 
 import bookmark from "./bookmarks.svg";
 import tag from "./tag.svg";
+import Survey from "./Survey.png";
 
 import Create from "../Survey/Create";
 import TakeSurvey from "../Survey/TakeSurvey";
@@ -45,7 +46,7 @@ class Feed extends React.Component {
       survey: [],
       pblm: [],
       creator: [],
-      acc:[],
+      acc: [],
       options: [
         { key: 1, text: "Choice 1", value: 1 },
         { key: 2, text: "Choice 2", value: 2 },
@@ -66,7 +67,7 @@ class Feed extends React.Component {
   async fetchPost(sort) {
     //Survey
     await axios
-      .get("/sol/getActiveSurvey/"+localStorage.getItem("username") +"/")
+      .get("/sol/getActiveSurvey/" + localStorage.getItem("username") + "/")
       .then((response) => {
         this.setState({ survey: response.data[0] });
         this.setState({ pblm: response.data[2] });
@@ -249,50 +250,51 @@ class Feed extends React.Component {
               <div>
                 {this.state.survey.map((x, index) => (
                   <>
-                  {this.state.acc[index] && (
-                  <div>
-                    <div
-                      className="card"
-                      style={{
-                        backgroundImage: "url('survey.png')",
-                        color: "white",
-                      }}
-                    >
-                      {this.state.pblm[index] != undefined &&
-                        this.state.creator[index] != undefined && (
-                          <div className="card-body">
-                            <div className="card-title">
-                              <h3>
-                                <i class="fas fa-bullhorn" />
-                                &nbsp;&nbsp;&nbsp; Take the survey{" "}
-                              </h3>
+                    {this.state.acc[index] && (
+                      <div>
+                        <div
+                          className="card"
+                          style={{
+                            backgroundImage: `url(${Survey})`,
+                            color: "white",
+                          }}
+                        >
+                          {this.state.pblm[index] != undefined &&
+                            this.state.creator[index] != undefined && (
+                              <div className="card-body">
+                                <div className="card-title">
+                                  <h3>
+                                    <i class="fas fa-bullhorn" />
+                                    &nbsp;&nbsp;&nbsp; Take the survey{" "}
+                                  </h3>
 
-                              <hr style={{ backgroundColor: "white" }} />
-                            </div>
-                            <div className="card-text">
-                              <label style={{ fontWeight: "bold" }}>
-                                {" "}
-                                Problem Title&nbsp;:
-                              </label>{" "}
-                              {this.state.pblm[index].title}
-                              <br />
-                              <label style={{ fontWeight: "bold" }}>
-                                Survey Conductor&nbsp;:
-                              </label>
-                              &nbsp;{this.state.creator[index].firstname}&nbsp;
-                              {this.state.creator[index].lastname}
-                            </div>
-                            <div style={{ float: "right" }}>
-                              <TakeSurvey
-                                surveyID={this.state.survey[index].surveyID}
-                              />
-                            </div>
-                          </div>
-                        )}
-                    </div>
-                    <br />
-                  </div>
-                  )}
+                                  <hr style={{ backgroundColor: "white" }} />
+                                </div>
+                                <div className="card-text">
+                                  <label style={{ fontWeight: "bold" }}>
+                                    {" "}
+                                    Problem Title&nbsp;:
+                                  </label>{" "}
+                                  {this.state.pblm[index].title}
+                                  <br />
+                                  <label style={{ fontWeight: "bold" }}>
+                                    Survey Conductor&nbsp;:
+                                  </label>
+                                  &nbsp;{this.state.creator[index].firstname}
+                                  &nbsp;
+                                  {this.state.creator[index].lastname}
+                                </div>
+                                <div style={{ float: "right" }}>
+                                  <TakeSurvey
+                                    surveyID={this.state.survey[index].surveyID}
+                                  />
+                                </div>
+                              </div>
+                            )}
+                        </div>
+                        <br />
+                      </div>
+                    )}
                   </>
                 ))}
               </div>

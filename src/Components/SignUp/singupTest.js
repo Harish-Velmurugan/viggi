@@ -125,6 +125,15 @@ export default function SignInSide() {
                   localStorage.setItem("username", response.data.user);
                   localStorage.setItem("email", values.email);
                   localStorage.setItem("signin", "false");
+                  axios
+                    .post(
+                      "/api/delCode/" +
+                        values.username +
+                        "/" +
+                        values.code +
+                        "/"
+                    )
+                    .then((r) => console.log(r.data));
 
                   axios
                     .post(

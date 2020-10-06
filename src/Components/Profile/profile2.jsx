@@ -141,10 +141,10 @@ class Profile2 extends React.Component {
                     </div>
                     <div className="row">
                       <div className="col-md-6">
-                        <label>Specialization</label>
+                        {/* <label>Specialization</label> */}
                       </div>
                       <div className="col-md-6">
-                        <p>{this.state.specialization}</p>
+                        {/* <p>{this.state.specialization}</p> */}
                       </div>
                     </div>
                   </div>

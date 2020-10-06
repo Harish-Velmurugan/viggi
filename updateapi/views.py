@@ -156,10 +156,19 @@ def notifyCountGet(request, pk):
 # @permission_classes([IsAuthenticated])
 def companyRequest(request, un, code):
     if CompanyApl.objects.filter(username=un, code=code).exists():
-        CompanyApl.objects.filter(username=un, code=code).delete()
+        #CompanyApl.objects.filter(username=un, code=code).delete()
         return Response({"value": "success"})
     else:
         return Response({"value": "Ivalid code or Username"})
+
+@api_view(['POST'])
+# @permission_classes([IsAuthenticated])
+def delCode(request, un, code):
+    if CompanyApl.objects.filter(username=un, code=code).exists():
+        CompanyApl.objects.filter(username=un, code=code).delete()
+        return Response({"value": "success"})
+    else:
+        return Response({"value": "failed"})
 
 
 @api_view(['POST'])
