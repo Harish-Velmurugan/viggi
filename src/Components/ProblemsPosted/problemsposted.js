@@ -124,6 +124,14 @@ class ProblemsPosted extends React.Component {
                           >
                             {problemPosted.sol_count} Submited
                           </div>
+                          {console.log(problemPosted.solved)}
+                          {problemPosted.solved ? (
+                            <div className="ml-2 badge badge-pill badge-success">
+                              Completed
+                            </div>
+                          ) : (
+                            ""
+                          )}
                         </div>
                         <div>
                           {/* <button type="button" className="btn btn-success btn-sm" style={{float: 'right'}} onClick={()=>history.push('/abstract')}>View Solutions</button> */}

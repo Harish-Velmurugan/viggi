@@ -76,9 +76,7 @@ class PostDetail extends React.Component {
   async handleSubmit() {
     this.setState({ setShow: false });
 
-    Axios.post(
-      "/sol/createTree/" + this.state.ansChoice + "/"
-    ).then((res) => {
+    Axios.post("/sol/createTree/" + this.state.ansChoice + "/").then((res) => {
       if (res.status == 200) {
         this.setState({
           redirect: true,
@@ -120,19 +118,19 @@ class PostDetail extends React.Component {
       }
     );
 
-    await Axios.get(
-      "/sol/getTree/" + this.state.postdetails.postId + "/"
-    ).then((res) => {
-      if (res.data.length > 0) {
-        this.setState({
-          treeData: JSON.parse(res.data[0].treeBase),
-          treeCommon: JSON.parse(res.data[0].treeCommon),
-          id: res.data[0].id,
-          username: res.data[0].username,
-          check: true,
-        });
+    await Axios.get("/sol/getTree/" + this.state.postdetails.postId + "/").then(
+      (res) => {
+        if (res.data.length > 0) {
+          this.setState({
+            treeData: JSON.parse(res.data[0].treeBase),
+            treeCommon: JSON.parse(res.data[0].treeCommon),
+            id: res.data[0].id,
+            username: res.data[0].username,
+            check: true,
+          });
+        }
       }
-    });
+    );
   }
   onSelect(selectedList, selectedItem) {
     this.setState({ buckets: selectedList });
@@ -145,7 +143,6 @@ class PostDetail extends React.Component {
     Axios.post(
       "/forum/upvote/" + i + "/" + localStorage.getItem("username") + "/"
     ).then((res) => {
-      console.log(res.data);
       if (res.data.value == "success") {
         document.getElementById("like".concat(i)).style =
           "background-color:yellow";
@@ -158,10 +155,10 @@ class PostDetail extends React.Component {
     Axios.post(
       "/forum/downvote/" + i + "/" + localStorage.getItem("username") + "/"
     ).then((res) => {
-      console.log(res.data);
       if (res.data.value == "success") {
         document.getElementById("dislike" + i).style =
           "background-color:yellow";
+        console.log(res.data);
       }
       document.getElementById("like".concat(i)).style = "background-color:teal";
     });
@@ -180,7 +177,6 @@ class PostDetail extends React.Component {
 
   onSubmit() {
     let formdata = new FormData();
-    console.log(this.state.buckets);
 
     formdata.append("postId", this.state.postId);
     formdata.append("username", localStorage.getItem("username"));
@@ -189,7 +185,6 @@ class PostDetail extends React.Component {
     formdata.append("msg", this.state.msg);
     formdata.append("citation_abt", this.state.citation_abt);
     formdata.append("citation", this.state.citation);
-    console.log(this.state);
 
     Axios.post("/forum/answerSubmission/", formdata).then((res) => {
       if (res.status == 200) {
@@ -200,15 +195,12 @@ class PostDetail extends React.Component {
           citation: "",
           citation_abt: "",
         });
-        console.log(this.state.buckets);
-        console.log(res.data);
       }
     });
   }
 
   render() {
     var post = this.state.postdetails;
-    console.log(this.state.postdetails);
 
     return (
       <div>
@@ -309,25 +301,20 @@ class PostDetail extends React.Component {
                       </tr>
                       <tr>
                         <td style={{ width: "100%" }}>
-                        {this.state.check ?
-                          post.panel  ? (
-                            <Link to={{pathname:"dashboard/expertpost", state:{username: post.username, sid: post.panelId, bucket: post.panelBucket, treeSet:true,tree:this.state.treeData}}}>
-                            <button
-                              className="btn btn-warning align-self-center  col-sm-12 col-md-6 mt-3 "
-                              style={{
-                                backgroundColor: "#663300",
-                                color: "white",
-                              }}
-                            >
-                              Post 
-                            </button>
-                            </Link>
-                            
-                          ) : (
-                            <div>
-                              {post.username ==
-                                localStorage.getItem("username") && (
-                                  <Link to={{pathname:"dashboard/postproblem"}}>
+                          {this.state.check ? (
+                            post.panel ? (
+                              <Link
+                                to={{
+                                  pathname: "dashboard/expertpost",
+                                  state: {
+                                    username: post.username,
+                                    sid: post.panelId,
+                                    bucket: post.panelBucket,
+                                    treeSet: true,
+                                    tree: this.state.treeData,
+                                  },
+                                }}
+                              >
                                 <button
                                   className="btn btn-warning align-self-center  col-sm-12 col-md-6 mt-3 "
                                   style={{
@@ -337,12 +324,29 @@ class PostDetail extends React.Component {
                                 >
                                   Post
                                 </button>
-                                </Link>
-                              )}
-                            </div>
-                          ):
-
-                          <button
+                              </Link>
+                            ) : (
+                              <div>
+                                {post.username ==
+                                  localStorage.getItem("username") && (
+                                  <Link
+                                    to={{ pathname: "dashboard/postproblem" }}
+                                  >
+                                    <button
+                                      className="btn btn-warning align-self-center  col-sm-12 col-md-6 mt-3 "
+                                      style={{
+                                        backgroundColor: "#663300",
+                                        color: "white",
+                                      }}
+                                    >
+                                      Post
+                                    </button>
+                                  </Link>
+                                )}
+                              </div>
+                            )
+                          ) : (
+                            <button
                               className="btn btn-warning align-self-center  col-sm-12 col-md-6 mt-3 "
                               style={{
                                 backgroundColor: "#663300",
@@ -350,10 +354,9 @@ class PostDetail extends React.Component {
                               }}
                               disabled="true"
                             >
-                              Post 
+                              Post
                             </button>
-
-                        }
+                          )}
                         </td>
                       </tr>
                       <tr>
@@ -378,7 +381,8 @@ class PostDetail extends React.Component {
                           ) : (
                             <div>
                               {post.username ==
-                              localStorage.getItem("username") || post.expert ? (
+                                localStorage.getItem("username") ||
+                              post.expert ? (
                                 <button
                                   className="btn btn-warning align-self-center  col-sm-12 col-md-6 mt-3"
                                   style={{
@@ -526,18 +530,25 @@ class PostDetail extends React.Component {
                       </button>
                     )}
                     &nbsp;
+                    {console.log(
+                      answer.downvoters.includes(
+                        localStorage.getItem("username")
+                      )
+                    )}
                     {answer.downvoters.includes(
                       localStorage.getItem("username") + ","
                     ) ||
                     answer.downvoters.includes(
                       "," + localStorage.getItem("username")
+                    ) ||
+                    answer.downvoters.includes(
+                      localStorage.getItem("username")
                     ) ? (
                       <button
                         className="btn"
                         id={"dislike".concat(answer.id)}
                         style={{ backgroundColor: "yellow" }}
                       >
-                        {" "}
                         <i
                           style={{ color: "white" }}
                           class="fas fa-thumbs-down"
@@ -550,7 +561,6 @@ class PostDetail extends React.Component {
                         style={{ backgroundColor: "teal" }}
                         onClick={() => this.dislike(answer.id)}
                       >
-                        {" "}
                         <i
                           style={{ color: "white" }}
                           class="fas fa-thumbs-down"
@@ -622,6 +632,7 @@ class PostDetail extends React.Component {
             <label htmlFor="msg">Link:</label>
             <textarea
               className="form-control"
+              placeholder="www.google.com"
               rows={1}
               id="citation"
               required

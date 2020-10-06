@@ -353,16 +353,16 @@ def winner(pid,sols):
  
 
 
-def badges(sid,sol,buckets):
+def badges(sid,buckets):#sid,sol,buckets
       obj = User_Profile.objects.get(username = sid )  
       buck=[]
       jack=[]  
 
-      yi = ['fashion','fmcg','healthcare','finance','ttt','edu','energy','med_ent','swhw','contruction'] 
+      yi = ['fashion','fmcg','healthcare','finance','tt','edu','power','med_ent','sw','hw','infrastructure'] 
       
       task = Solution.objects.filter(username = sid, status= True)
       task0 = Solution.objects.filter(username = sid)      
-      task1 = Solution.objects.filter(member__icontains = sid, status= True)
+      task1 = Solution.objects.filter(members__icontains = sid, status= True)
 
       #Striker-badge
       if len(task0) == 1:
@@ -431,7 +431,7 @@ def badges(sid,sol,buckets):
 
 
 def levels(id):
-      o1 = User_Profile.objects.get(username = sid )
+      o1 = User_Profile.objects.get(username = id )
       lvl = o1.rp
 
       if lvl >500:
@@ -451,10 +451,10 @@ def levels(id):
 def statusUpdate(id):
       ob1= Solution.objects.filter(username =id)
       ob2= Post.objects.filter(username =id)
-      ob3=Solution.objects.filter(member__icontains = id)
+      ob3=Solution.objects.filter(members__icontains = id)
 
-      ob = ob1|ob2
-      if len(ob) > 20:
+      # ob = ob1|ob2
+      if len(ob1) > 20:
             obj.unraveler = True
 
       if len(ob2) >= 5:

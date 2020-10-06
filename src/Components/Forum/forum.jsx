@@ -46,9 +46,7 @@ class Forum extends React.Component {
         "Security",
         "Textile",
         "Trade",
-        "Travel & Tourism"
-
-         
+        "Travel & Tourism",
       ],
     };
     //this.fetchTasks = this.fetchTasks.bind(this)
@@ -58,7 +56,7 @@ class Forum extends React.Component {
   }
 
   componentDidMount() {
-    const url = "/forum/getPost/" ;
+    const url = "/forum/getPost/";
     const method = "GET";
     Axios.request({
       baseURL: "",
@@ -70,8 +68,7 @@ class Forum extends React.Component {
       method,
     })
       .then((response) => {
-        this.setState({ feedinfo: response.data});
-
+        this.setState({ feedinfo: response.data });
       })
       .catch((error) => {
         console.log(error);
@@ -83,8 +80,8 @@ class Forum extends React.Component {
   // }
 
   async addInterestCount(id) {
-    var url = '/forum/getPost/';
-    await Axios.post(url);
+    var url = "/forum/getPost/";
+    await Axios.get(url);
   }
   bucketChange(event) {
     let dom = [];
@@ -158,9 +155,7 @@ class Forum extends React.Component {
                       <div className="card-body">
                         <div className="card-title">
                           &nbsp;
-                          <p>
-                            Submitted Answers : {feedinfo.ans_count}
-                          </p>
+                          <p>Submitted Answers : {feedinfo.ans_count}</p>
                         </div>
                         <div className="card-text">
                           <strong style={{ fontSize: "16px" }}>Desc:</strong>
@@ -168,13 +163,12 @@ class Forum extends React.Component {
                           <p style={{ color: "#808080", fontSize: "14px" }}>
                             {feedinfo.desc}
                           </p>
-
                         </div>
                         <div style={{ float: "right" }}>
                           <Link
                             to={{
-                              pathname:"/postdetail",
-                              state: { pid: feedinfo.postId, expert:false },
+                              pathname: "/postdetail",
+                              state: { pid: feedinfo.postId, expert: false },
                             }}
                             className="btn btn-primary"
                             onClick={() =>
@@ -197,7 +191,7 @@ class Forum extends React.Component {
                   Latest News
                </div>
                
-                <Main/> */} 
+                <Main/> */}
               </div>
             </div>
           </div>

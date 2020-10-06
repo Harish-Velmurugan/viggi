@@ -25,10 +25,10 @@ class Notification extends React.Component {
       budget: 0,
       nid: "",
       choice: "",
-      accept:false,
-      acpt:null,
-      reqid:null,
-      ven:"data"
+      accept: false,
+      acpt: null,
+      reqid: null,
+      ven: "data",
     };
     this.handleChange = this.handleChange.bind(this); //bind
     this.update = this.update.bind(this);
@@ -202,20 +202,17 @@ class Notification extends React.Component {
       .post("/helper/dpagreed/" + rid + "/", data, {
         headers: headers,
       })
-      .then((response) => this.setState({accept:true,reqid:rid}));
+      .then((response) => this.setState({ accept: true, reqid: rid }));
 
-      //this.setState({accept:false})
+    //this.setState({accept:false})
   }
- 
 
-  async singleAccept(rid){
-    axios.get("/helper/singleaccept/"+rid+"/")
-    .then((response) => {
+  async singleAccept(rid) {
+    axios.get("/helper/singleaccept/" + rid + "/").then((response) => {
       this.setState({ acpt: response.data });
-      console.log(response.data)
-    })
-
-   }
+      console.log(response.data);
+    });
+  }
 
   componentDidMount() {
     // const token=localStorage.getItem("token")
@@ -234,12 +231,10 @@ class Notification extends React.Component {
       .catch((error) => {
         console.log(error);
       });
-
-    
   }
 
   render() {
-    console.log(this.state.notification,this.state.acpt);
+    console.log(this.state.notification, this.state.acpt);
     if (this.state.redirect == "wallet") {
       return (
         <Redirect
@@ -864,11 +859,11 @@ class Notification extends React.Component {
                                             )}
                                             <br />
                                             <h6>
-                                              Choose the winner.If
-                                              not it will be moved to expired
-                                              problem and you cannot handle the
-                                              solution anymore if you have more
-                                              than five solutions
+                                              Choose the winner.If not it will
+                                              be moved to expired problem and
+                                              you cannot handle the solution
+                                              anymore if you have more than five
+                                              solutions
                                             </h6>
                                             <br></br>
                                             <div className="float-right"></div>
@@ -954,9 +949,6 @@ class Notification extends React.Component {
                                   );
                                 }
 
-
-
-
                                 //topsolver problem deadline crossed-choose winner
                                 else if (
                                   notification.verb ==
@@ -1013,8 +1005,9 @@ class Notification extends React.Component {
                                             )}
                                             <br />
                                             <h6>
-                                              Choose the winner.If
-                                             not you cannot handle the problem or solutions anymore.
+                                              Choose the winner.If not you
+                                              cannot handle the problem or
+                                              solutions anymore.
                                             </h6>
                                             <br></br>
                                             <div className="float-right"></div>
@@ -1066,7 +1059,8 @@ class Notification extends React.Component {
                                                   problem title "
                                                   {notification.data.data.title}
                                                   ".You have only one day left
-                                                  to choose the winner(Top Solver requested).
+                                                  to choose the winner(Top
+                                                  Solver requested).
                                                 </strong>
                                               </h5>
                                             ) : (
@@ -1078,14 +1072,16 @@ class Notification extends React.Component {
                                                   problem title "
                                                   {notification.data.data.title}
                                                   ".You have only one day left
-                                                  to choose the winner(Top Solver requested).
+                                                  to choose the winner(Top
+                                                  Solver requested).
                                                 </strong>
                                               </h5>
                                             )}
                                             <br />
                                             <h6>
                                               Choose the winner within the last
-                                              day.If not you cannot handle the solutions anymore.
+                                              day.If not you cannot handle the
+                                              solutions anymore.
                                             </h6>
                                             <br></br>
                                             <div className="float-right"></div>
@@ -1099,8 +1095,7 @@ class Notification extends React.Component {
 
                                 //Top Solver Accepted
                                 else if (
-                                  notification.verb ==
-                                  "Top Solver Accepted"
+                                  notification.verb == "Top Solver Accepted"
                                 ) {
                                   return (
                                     <div>
@@ -1116,7 +1111,6 @@ class Notification extends React.Component {
                                               class="fa fa-bullhorn"
                                               style={{
                                                 fontsize: "36px",
-                                                
                                               }}
                                             ></i>
                                           </div>
@@ -1133,7 +1127,8 @@ class Notification extends React.Component {
                                                 <strong
                                                   style={{ color: "blue" }}
                                                 >
-                                                  Top solver accepted - {notification.data.data.title}
+                                                  Top solver accepted -{" "}
+                                                  {notification.data.data.title}
                                                 </strong>
                                               </h5>
                                             ) : (
@@ -1141,13 +1136,17 @@ class Notification extends React.Component {
                                                 <strong
                                                   style={{ color: "black" }}
                                                 >
-                                                  Top solver accepted - {notification.data.data.title}
+                                                  Top solver accepted -{" "}
+                                                  {notification.data.data.title}
                                                 </strong>
                                               </h5>
                                             )}
                                             <br />
                                             <h6>
-                                            {notification.data.name.name} has accepted your request to solve the problem {notification.data.data.title}
+                                              {notification.data.name.name} has
+                                              accepted your request to solve the
+                                              problem{" "}
+                                              {notification.data.data.title}
                                             </h6>
                                             <br></br>
                                             {/* <div className="float-right"></div> */}
@@ -1157,15 +1156,7 @@ class Notification extends React.Component {
                                       </div>
                                     </div>
                                   );
-                                }  
-
-
-
-
-
-
-
-
+                                }
 
                                 // seeker solver tc agree (solver) (one soln)--smartcontract
                                 else if (
@@ -2371,6 +2362,8 @@ class Notification extends React.Component {
                                                       notification.data.prblm
                                                         .title
                                                     }
+                                                    .(rp based on votes for your
+                                                    solution)
                                                   </strong>
                                                 ) : (
                                                   <strong
@@ -2382,6 +2375,8 @@ class Notification extends React.Component {
                                                       notification.data.prblm
                                                         .title
                                                     }
+                                                    .(rp based on votes for your
+                                                    solution)
                                                   </strong>
                                                 )}
                                               </h5>
@@ -2389,7 +2384,7 @@ class Notification extends React.Component {
                                             <br></br>
                                             <div className="float-right"></div>
                                             <h6>
-                                              Title:&nbsp;
+                                              Solution Title:&nbsp;
                                               {notification.data.sol.title}
                                             </h6>
                                           </div>
@@ -4645,8 +4640,7 @@ class Notification extends React.Component {
                                             <h6>
                                               The Technology Vendor have
                                               accepted to provide you the
-                                              technolgy for a quoted
-                                              budget....
+                                              technolgy for a quoted budget....
                                             </h6>
                                           </div>
                                         </div>

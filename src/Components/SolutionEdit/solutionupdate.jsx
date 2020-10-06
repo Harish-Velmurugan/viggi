@@ -13,7 +13,7 @@ class SolutionUpdate extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      problemStatus:props.problemDetails.solved,
+      problemStatus: props.problemDetails.solved,
       problemId: props.solution.problemId,
       collaboration: props.solution.collaboration,
       agreed: props.solution.agreed,
@@ -92,11 +92,15 @@ class SolutionUpdate extends React.Component {
   }
 
   render() {
+    console.log("*=*=");
     return (
-      <div id="accordion" className="ml-3" >
-        <div class="card"style={{
-        minWidth:"200px",
-      }}>
+      <div id="accordion" className="ml-3">
+        <div
+          class="card"
+          style={{
+            minWidth: "200px",
+          }}
+        >
           <div class="card-header" id="headingOne">
             <h5 class="mb-0">
               <img
@@ -115,8 +119,9 @@ class SolutionUpdate extends React.Component {
                   className="float-right fas fa-hands-helping"
                   style={{ color: "#d99164" }}
                 ></p>
-              ) : ""
-              }
+              ) : (
+                ""
+              )}
               <div className="float-right mt-4">
                 {" "}
                 <i
@@ -138,10 +143,7 @@ class SolutionUpdate extends React.Component {
             data-parent="#accordion"
           >
             <div class="card-body">
-              
-
               <table style={{ width: "98%" }}>
-
                 <tbody>
                   <tr>
                     <td className="p-4">
@@ -199,6 +201,7 @@ class SolutionUpdate extends React.Component {
                           this.handleImage(e, this.state.solutionId)
                         }
                       />
+                      <a href={this.state.image}>(View File)</a>
                       {/* <div class="custom-file">
               <input type="file" class="custom-file-input " id="image" name="image" onChange={this.handleImage}  />
         <label class="custom-file-label"  id={this.state.solutionId+"file"}>{this.state.image}</label>
@@ -229,6 +232,7 @@ class SolutionUpdate extends React.Component {
                           this.handleDocs(e, this.state.solutionId)
                         }
                       />
+                      <a href={this.state.docs}>(View File)</a>
                     </td>
                   </tr>
                   <tr>
@@ -251,14 +255,15 @@ class SolutionUpdate extends React.Component {
                           this.handleVideo(e, this.state.solutionId)
                         }
                       />
+                      <a href={this.state.video}>(View File)</a>
                     </td>
                   </tr>
                   <tr>
-                  
-                    {this.state.problemStatus?"":    
-
-                    this.state.username == localStorage.getItem("username") &&
-                    this.state.agreed ? (
+                    {this.state.problemStatus ? (
+                      ""
+                    ) : this.state.username ==
+                        localStorage.getItem("username") &&
+                      this.state.agreed ? (
                       <td colSpan={2} className="p-4">
                         <button
                           type="submit"

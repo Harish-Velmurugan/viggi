@@ -352,10 +352,10 @@ class CUpdateProfile extends Component {
                     className="form-control"
                     id="phone"
                     name="phone"
-                    placeholder="Ex. +91 XXXXXXXXXX"
+                    placeholder="Ex. +91XXXXXXXXXX"
                     value={this.state.phone}
                     onChange={this.handleChange}
-                    pattern="+[0-9]{2} [0-9]{10}"
+                    pattern="+[0-9]{2}[0-9]{10}"
                     required
                   />
                   <p>{error.phoneError && error.phoneError}</p>
@@ -655,7 +655,7 @@ class CUpdateProfile extends Component {
                     <option value="Zimbabwe">Zimbabwe</option>
                   </select>
                 </div>
-                <div className="form-group col-md-2">
+                <div className="form-group col-md-6">
                   <label htmlFor="location">Address</label>
                   <input
                     type="text"
@@ -667,7 +667,7 @@ class CUpdateProfile extends Component {
                     required
                   />
                 </div>
-                <div className="form-group col-md-2">
+                <div className="form-group col-md-6">
                   <label htmlFor="pin">Zip Code</label>
                   <input
                     type="text"
@@ -681,7 +681,7 @@ class CUpdateProfile extends Component {
                   />
                 </div>
 
-                <div className="form-group col-md-2">
+                <div className="form-group col-md-6">
                   <label htmlFor="strength">Number of Employees</label>
                   <input
                     type="text"

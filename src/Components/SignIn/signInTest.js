@@ -226,7 +226,7 @@ export default function SignInSide() {
                     onClick={() => setForgetPassword(false)}
                     variant="body2"
                   >
-                    Forgot password?
+                    {/* Forgot password? */}
                   </Link>
                 </Grid>
                 <Grid item>

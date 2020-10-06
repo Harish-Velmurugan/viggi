@@ -383,7 +383,7 @@ class ProblemDescription extends React.Component {
                       </Modal>
 
                       <Modal show={this.state.show}>
-                        <Modal.Header className="float">
+                        <Modal.Header className="flo">
                           <Modal.Title className="mx-auto">
                             Bet this Solution{" "}
                           </Modal.Title>
@@ -471,7 +471,7 @@ class ProblemDescription extends React.Component {
                               <p className="pl-2">{solution.abstract}</p>
                             </div>
                           </div>
-                          <div className="float-right">paddingTop="10rem"
+                          <div className="float-right" paddingTop="10rem">
                             {(() => {
                               if (
                                 localStorage.getItem("username") ==

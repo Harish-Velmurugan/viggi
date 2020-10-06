@@ -151,6 +151,7 @@ class solutionedit extends React.Component {
     const pid = this.props.location.state.query;
     axios.get(`/dashboard/problemDescription/${pid}/`).then((res) => {
       this.setState({ problemDetails: res.data[0] });
+      console.log(this.state.problemDetails.skill.split(","));
       this.setState({ skills: this.state.problemDetails.skill.split(",") });
     });
 
@@ -163,7 +164,8 @@ class solutionedit extends React.Component {
           "/"
       )
       .then((res) => {
-        this.setState({ solution1: res.data });
+        console.log(res.data);
+        this.setState({ solution: res.data });
         // this.setState({problemId:pid})
 
         // });

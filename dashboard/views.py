@@ -197,19 +197,19 @@ def feedview(request,un,st):
     serializer2=user_profile_serializer(task2,many=True)
    
     if st=="new" or st==" ":   
-        task=Post.objects.all().order_by("-posteddate")
+        task=Post.objects.filter(solved=False,expired=False).order_by("-posteddate")
     elif st=="old":   
-        task=Post.objects.all().order_by("posteddate")
+        task=Post.objects.filter(solved=False,expired=False).order_by("posteddate")
     elif st=="big":   
-        task=Post.objects.all().order_by("-RnD_Budget")
+        task=Post.objects.filter(solved=False,expired=False).order_by("-RnD_Budget")
     elif st=="small":   
-        task=Post.objects.all().order_by("RnD_Budget")
+        task=Post.objects.filter(solved=False,expired=False).order_by("RnD_Budget")
     elif st=="near":
-        task=Post.objects.filter(expired= False).order_by("deadline")
+        task=Post.objects.filter(solved=False,expired=False).order_by("deadline")
     elif st=="far":   
-        task=Post.objects.filter(expired= False).order_by("-deadline")
+        task=Post.objects.filter(solved=False,expired= False).order_by("-deadline")
     else:
-        task=Post.objects.all().order_by("-posteddate")
+        task=Post.objects.filter(solved=False,expired=False).order_by("-posteddate")
     serializer=PostSerializer2(task,many=True)      
     content=[serializer.data,serializer2.data]
     return response(content,safe=False)

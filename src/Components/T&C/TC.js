@@ -55,7 +55,6 @@ export default class TC extends React.Component {
       .then((res) => {
         console.log(res.data);
       });
-      
   }
   render() {
     return (
@@ -88,6 +87,7 @@ export default class TC extends React.Component {
                   marginLeft: "20%",
                   backgroundColor: "green",
                   color: "#ffffff",
+                  marginRight: "2%",
                 }}
                 type="button"
                 id="solbutton"
