@@ -294,7 +294,7 @@ class ChatComponent extends Component {
 
               <h6 style={{ color: "white" }}>(Displaying last 50 messages)</h6>
 
-              {WebSocketInstance.state.choice ? (
+              {!WebSocketInstance.state.choice ? (
                 <div
                   className="btn-group dropleft"
                   style={{

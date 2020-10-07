@@ -70,6 +70,8 @@ class Notification extends React.Component {
       .catch((error) => {
         console.log("error");
       });
+    document.getElementById("acc"+nid).innerHTML = "Accepted";
+    document.getElementById("r" + nid).disabled = true;
   };
 
   rejectMember = (solId, uid, nid) => {
@@ -78,6 +80,8 @@ class Notification extends React.Component {
       .catch((error) => {
         console.log("error");
       });
+    document.getElementById("r" + nid).innerHTML = "Rejected";
+    document.getElementById("acc" + nid).disabled = true;
   };
 
   expertAccept = (nid) => {
@@ -1920,6 +1924,7 @@ class Notification extends React.Component {
                                             <div className="float-right">
                                               <button
                                                 type="button"
+                                                id={"r".concat(notification.id)}
                                                 onClick={() => {
                                                   this.rejectMember(
                                                     notification.data.sol
@@ -1935,6 +1940,7 @@ class Notification extends React.Component {
                                               </button>
                                               &nbsp;&nbsp;
                                               <button
+                                                id={"acc".concat(notification.id)}
                                                 type="button"
                                                 onClick={() => {
                                                   this.addMember(
@@ -1946,7 +1952,7 @@ class Notification extends React.Component {
                                                   );
                                                 }}
                                                 class="btn btn-success"
-                                                id="a1"
+                                                
                                               >
                                                 Accept
                                               </button>
@@ -1983,7 +1989,7 @@ class Notification extends React.Component {
                                             <br></br>
 
                                             <h6>
-                                              Title:&nbsp;
+                                              Solution title:&nbsp;
                                               {notification.data.sol.title}
                                             </h6>
                                           </div>

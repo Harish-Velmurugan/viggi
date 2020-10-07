@@ -102,6 +102,7 @@ class ProblemDescription extends React.Component {
         this.setState({
           solutions: response.data,
         });
+        console.log(this.state.solutions);
       });
 
     this.setState({
@@ -484,8 +485,9 @@ class ProblemDescription extends React.Component {
                               ) {
                                 return (
                                   <div>
-                                    {solution.collaboration &&
-                                    solution.agreed ? (
+                                    {/* && */}
+                                    {/* solution.agreed */}
+                                    {solution.collaboration ? (
                                       solution.waiting_list.includes(
                                         localStorage.getItem("username")
                                       ) ? (
