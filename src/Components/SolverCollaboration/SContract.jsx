@@ -39,12 +39,16 @@ class SContract extends Component {
       )
 
       .then((response) => {
+        console.log(response.data);
         this.setState({ Name: response.data[2] });
         this.setState({ Contract: response.data[0] });
         this.setState({ Personal: response.data[1] });
         this.setState({ pblm: response.data[3] });
         this.setState({ solution: response.data[4] });
+
         for (let i = 0; i < response.data[1].length; i++) {
+          console.log(response.data);
+          console.log(response.data[1][i].agreed);
           if (
             response.data[1][i].username == localStorage.getItem("username")
           ) {
@@ -62,6 +66,7 @@ class SContract extends Component {
           for (let i = 0; i < response.data[1].length; i++) {
             if (id == response.data[1][i].username) {
               if (!response.data[1][i].agreed) {
+                console.log(response.data[1][i].agreed + "]");
                 this.setState({ enable: false });
                 break;
               }
@@ -159,7 +164,7 @@ class SContract extends Component {
                       <td style={{ padding: "1.8%" }}>
                         {this.state.agree ? (
                           <h6 style={{ color: "green" }}>Agreed..</h6>
-                        ) : this.state.enable ? (
+                        ) : !this.state.enable ? (
                           <Button
                             id={"btn" + index}
                             onClick={() => this.handleClick(index)}

@@ -2369,7 +2369,7 @@ class Notification extends React.Component {
                                                         .title
                                                     }
                                                     .(rp based on votes for your
-                                                    solution)
+                                                    solution) and winning amount is added in your wallet
                                                   </strong>
                                                 ) : (
                                                   <strong
@@ -2382,7 +2382,7 @@ class Notification extends React.Component {
                                                         .title
                                                     }
                                                     .(rp based on votes for your
-                                                    solution)
+                                                    solution) and winning amount is added in your wallet
                                                   </strong>
                                                 )}
                                               </h5>
