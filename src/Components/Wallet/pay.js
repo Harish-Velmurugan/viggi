@@ -83,10 +83,18 @@ export default class Pay extends Component {
       let logo = this.data.logo;
       let file = this.data.file;
 
+      let n1 = d.getMonth() + 1 + "";
+      console.log(n1);
+      let n2;
+      if (n1.length == 1) {
+        n2 = "0" + n1;
+      } else {
+        n2 = n1;
+      }
       let deadline =
         d.getFullYear() +
         "-" +
-        d.getMonth() +
+        n2 +
         "-" +
         d.getDate() +
         "T" +
@@ -136,7 +144,7 @@ export default class Pay extends Component {
       /*for (var value of formdata.values()) { 
            }*/
       await axios
-        .post("/forun/postSubmission/", formdata)
+        .post("/forum/postSubmission/", formdata)
         .then((response) => {});
     } else if (this.data.initial == "70") {
       axios.post("/post/checkPaid/" + this.data.id + "/");
@@ -166,7 +174,12 @@ export default class Pay extends Component {
     if (this.data.initial == "expert" && this.state.redirect) {
       if (this.data.choice == "data") {
         return (
-          <Redirect to={{ pathname: "/dashboard/helpers/", state: { query: this.data } }} />
+          <Redirect
+            to={{
+              pathname: "/dashboard/helpers/",
+              state: { query: this.data },
+            }}
+          />
         );
       } else {
         return (

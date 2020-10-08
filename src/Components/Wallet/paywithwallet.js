@@ -23,7 +23,7 @@ class PayWithWallet extends Component {
       orderid: "",
       nid: this.props.location.state.main.nid,
       choice: this.props.location.state.main.choice,
-      ven :this.props.location.state.main.ven,
+      ven: this.props.location.state.main.ven,
     };
 
     this.data = {
@@ -54,6 +54,7 @@ class PayWithWallet extends Component {
   }
 
   componentWillMount() {
+    console.log(this.data.deadline);
     this.CalculateAmount();
   }
 
@@ -77,6 +78,7 @@ class PayWithWallet extends Component {
     e.preventDefault();
     this.setState({ redirect: true });
   }
+
   post() {
     let username = this.data.id;
     let title = this.data.title;
@@ -94,10 +96,18 @@ class PayWithWallet extends Component {
     let logo = this.data.logo;
     let file = this.data.file;
 
+    let n1 = d.getMonth() + 1 + "";
+    console.log(n1);
+    let n2;
+    if (n1.length == 1) {
+      n2 = "0" + n1;
+    } else {
+      n2 = n1;
+    }
     let deadline =
       d.getFullYear() +
       "-" +
-      d.getMonth() +
+      n2 +
       "-" +
       d.getDate() +
       "T" +
@@ -109,7 +119,7 @@ class PayWithWallet extends Component {
       "Z";
 
     let formdata = new FormData();
-
+    console.log(deadline);
     formdata.append("username", username);
     formdata.append("title", title);
     formdata.append("description", description);
@@ -179,18 +189,22 @@ class PayWithWallet extends Component {
             } else if (this.data.initial == "70") {
               axios.post("/post/checkPaid/" + this.data.id + "/");
             } else if (this.data.initial == "expert") {
-
-              if(this.state.choice == "data"){
-                console.log(this.state.nid)
-                axios.post("/helper/DPPaid/" + this.state.nid + "/"+this.state.ven + "/" );
-              }
-              else{
-              axios
-                .post("/api/expertPayProblem/" + this.state.nid + "/")
-                .then((response) => {})
-                .catch((error) => {
-                  console.log("error");
-                });
+              if (this.state.choice == "data") {
+                console.log(this.state.nid);
+                axios.post(
+                  "/helper/DPPaid/" +
+                    this.state.nid +
+                    "/" +
+                    this.state.ven +
+                    "/"
+                );
+              } else {
+                axios
+                  .post("/api/expertPayProblem/" + this.state.nid + "/")
+                  .then((response) => {})
+                  .catch((error) => {
+                    console.log("error");
+                  });
               }
             } else if (this.data.initial == "forumpost") {
               this.forumpost();
@@ -219,15 +233,25 @@ class PayWithWallet extends Component {
         <Redirect to={{ pathname: "/abstract", state: { query: this.data } }} />
       );
     }
-    
+
     if (this.data.initial == "expert" && this.state.redirect) {
-      if( this.data.choice == "data"){
-         return (
-           <Redirect to={{ pathname: "/dashboard/helpers/", state: { query: this.data } }} />
-         );
-      }else{
+      if (this.data.choice == "data") {
         return (
-          <Redirect to={{ pathname: "/dashboard/helpers/", state: { query: this.data } }} />
+          <Redirect
+            to={{
+              pathname: "/dashboard/helpers/",
+              state: { query: this.data },
+            }}
+          />
+        );
+      } else {
+        return (
+          <Redirect
+            to={{
+              pathname: "/dashboard/helpers/",
+              state: { query: this.data },
+            }}
+          />
         );
       }
     }
@@ -368,23 +392,23 @@ class PayWithWallet extends Component {
                   </h3>
                 )}
 
-                {this.state.choice=="wicked" && 
-                <h3>
-                  Money to solve wicked problem:{" "}
-                  <span className="money-wallet">
-                    {numberFormat(this.state.amount)}{" "}
-                  </span>
-                </h3>
-                 }
+                {this.state.choice == "wicked" && (
+                  <h3>
+                    Money to solve wicked problem:{" "}
+                    <span className="money-wallet">
+                      {numberFormat(this.state.amount)}{" "}
+                    </span>
+                  </h3>
+                )}
 
-                 {this.state.choice=="data" && 
-                <h3>
-                  Money to view attachments:{" "}
-                  <span className="money-wallet">
-                    {numberFormat(this.state.amount)}{" "}
-                  </span>
-                </h3>
-                 }
+                {this.state.choice == "data" && (
+                  <h3>
+                    Money to view attachments:{" "}
+                    <span className="money-wallet">
+                      {numberFormat(this.state.amount)}{" "}
+                    </span>
+                  </h3>
+                )}
               </>
             )}
             <h3>
