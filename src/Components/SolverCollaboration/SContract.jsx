@@ -39,16 +39,12 @@ class SContract extends Component {
       )
 
       .then((response) => {
-        console.log(response.data);
         this.setState({ Name: response.data[2] });
         this.setState({ Contract: response.data[0] });
         this.setState({ Personal: response.data[1] });
         this.setState({ pblm: response.data[3] });
         this.setState({ solution: response.data[4] });
-
         for (let i = 0; i < response.data[1].length; i++) {
-          console.log(response.data);
-          console.log(response.data[1][i].agreed);
           if (
             response.data[1][i].username == localStorage.getItem("username")
           ) {
@@ -61,18 +57,33 @@ class SContract extends Component {
         }
 
         let id = response.data[4].username;
-
+        console.log(response.data);
         if (id == localStorage.getItem("username")) {
           for (let i = 0; i < response.data[1].length; i++) {
             if (id == response.data[1][i].username) {
-              if (!response.data[1][i].agreed) {
-                console.log(response.data[1][i].agreed + "]");
-                this.setState({ enable: false });
-                break;
+              for (let k = 0; k < response.data[1].length; k++) {
+                console.log(k);
+                if (id == response.data[1][k].username) {
+                  // k++;
+                  console.log("in");
+                } else {
+                  if (!response.data[1][k].agreed) {
+                    console.log("in1");
+                    this.setState({ enable: false });
+                    // break;
+                  } else {
+                    console.log("in2");
+                    this.setState({ enable: true });
+                  }
+                }
               }
+              // if (!response.data[1][i].agreed) {
+              // this.setState({ enable: false });
+              // break;
             }
           }
         }
+        // }
 
         //    const info = this.state.Info
         //    info.map(
@@ -164,7 +175,7 @@ class SContract extends Component {
                       <td style={{ padding: "1.8%" }}>
                         {this.state.agree ? (
                           <h6 style={{ color: "green" }}>Agreed..</h6>
-                        ) : !this.state.enable ? (
+                        ) : this.state.enable ? (
                           <Button
                             id={"btn" + index}
                             onClick={() => this.handleClick(index)}

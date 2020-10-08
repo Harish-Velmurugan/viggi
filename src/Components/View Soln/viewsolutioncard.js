@@ -511,11 +511,12 @@ class SSSlay extends React.Component {
                             {console.log(this.props.user.solutionId)}
                             ACCEPT
                           </button>
-                          <br /> Wait until the deadline to cross to choose the solution
+                          <br /> Wait until the deadline to cross to choose the
+                          solution
                         </div>
                       )}
                     </div>
-                  ) : (
+                  ) : this.state.date == "true" ? (
                     <div>
                       {/* <button
                        type="button"
@@ -548,6 +549,41 @@ class SSSlay extends React.Component {
                         {console.log(this.props.user)}
                         ACCEPT
                       </Link>
+                    </div>
+                  ) : (
+                    <div>
+                      {/* <button
+                     type="button"
+                     class="btn"
+                     style={{ backgroundColor: "#aba9a9", color: "#ffffff" }}
+                   >
+                     ACCEPT
+                   </button>
+                   <br /> */}
+                      <br />
+                      <button
+                        type="button"
+                        class="btn"
+                        style={{ backgroundColor: "#aba9a9", color: "#ffffff" }}
+                      >
+                        COLLABORATE
+                      </button>
+                      <br />
+                      <h6 style={{ color: "red" }}>
+                        This solution contract is not completed
+                      </h6>
+                      <button
+                        // onClick={() => this.submitsoln(this.props.user)}
+                        onClick={() => this.handleModal()}
+                        type="button"
+                        class="btn btn-success"
+                        disabled="true"
+                      >
+                        {console.log(this.props.user)}
+                        ACCEPT
+                      </button>
+                      <br /> Wait until the deadline to cross to choose the
+                      solution
                     </div>
                   )}
 
