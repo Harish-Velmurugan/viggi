@@ -11,14 +11,14 @@ class TechReq extends React.Component {
       setShow: false,
       other: false,
       type: ["Server"],
-      techName: [""],
-      techTime: [""],
-      techQuantity: [""],
-      techstorage: [""],
-      techspeed: [""],
-      techos: [""],
-      techcores: [""],
-      techdepen: [""],
+      techName: ["null"],
+      techTime: ["null"],
+      techQuantity: ["null"],
+      techstorage: ["null"],
+      techspeed: ["null"],
+      techos: ["null"],
+      techcores: ["null"],
+      techdepen: ["null"],
       purpose: "",
       budget: "",
       attach: "",
@@ -156,15 +156,15 @@ class TechReq extends React.Component {
 
     if (this.state.index != 9) {
       if (tec[index] != "" && time[index] != "" && qua[index] != "") {
-        tec[tec.length] = "";
-        time[time.length] = "";
-        qua[qua.length] = "";
+        tec[tec.length] = "null";
+        time[time.length] = "null";
+        qua[qua.length] = "null";
         type[type.length] = "Server";
-        store[store.length] ="";
-        speed[speed.length] ="";
-        os[os.length]="";
-        core[core.length]="";
-        depend[depend.length]="";
+        store[store.length] ="null";
+        speed[speed.length] ="null";
+        os[os.length]="null";
+        core[core.length]="null";
+        depend[depend.length]="null";
         this.setState({
           techName: tec,
           techTime: time,
